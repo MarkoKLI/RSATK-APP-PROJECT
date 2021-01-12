@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 11, 2021 at 09:38 PM
+-- Generation Time: Jan 12, 2021 at 11:12 PM
 -- Server version: 5.7.24
 -- PHP Version: 7.4.1
 
@@ -58,7 +58,7 @@ CREATE TABLE `appointments` (
   `id` int(10) UNSIGNED NOT NULL,
   `doctorId` int(10) UNSIGNED NOT NULL,
   `patientId` int(10) UNSIGNED NOT NULL,
-  `date` date NOT NULL,
+  `date` varchar(10) NOT NULL,
   `time` varchar(10) NOT NULL,
   `createdOn` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -100,11 +100,10 @@ CREATE TABLE `diagnoses` (
 
 CREATE TABLE `diagnoses_made` (
   `id` int(10) UNSIGNED NOT NULL,
-  `active` tinyint(1) NOT NULL,
+  `active` tinyint(1) DEFAULT NULL,
   `reportId` int(10) UNSIGNED NOT NULL,
   `diagnosisId` int(10) UNSIGNED NOT NULL,
-  `createdOn` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updatedOn` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `createdOn` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -117,7 +116,7 @@ CREATE TABLE `reports` (
   `id` int(10) UNSIGNED NOT NULL,
   `title` varchar(512) NOT NULL,
   `description` text NOT NULL,
-  `date` date NOT NULL,
+  `date` varchar(10) NOT NULL,
   `doctorId` int(10) UNSIGNED NOT NULL,
   `patientId` int(10) UNSIGNED NOT NULL,
   `createdOn` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -163,7 +162,7 @@ CREATE TABLE `users` (
   `surname` varchar(99) NOT NULL,
   `email` varchar(99) NOT NULL,
   `telNr` varchar(16) NOT NULL,
-  `DNR` date NOT NULL,
+  `DOB` varchar(10) NOT NULL,
   `PasswordHash` char(64) NOT NULL,
   `passwordSalt` char(8) NOT NULL,
   `isDoctor` tinyint(1) NOT NULL,
