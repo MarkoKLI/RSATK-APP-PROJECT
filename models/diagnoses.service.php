@@ -6,8 +6,7 @@
 
             $query = "  SELECT *
                         FROM active_diagnoses
-                        WHERE diagnosisId = ?
-                        AND patientId = ?";
+                        WHERE diagnosisId = ? AND patientId = ?";
 
             $statement = self::$connection->prepare($query);
             $statement->bind_param('ii', $diagnosisId, $userId);
@@ -16,13 +15,32 @@
             return $result->num_rows;
         }
 
-        public static function deleteActiveDiagnoses (int $diagnosisId, int $patientId) {
+        // Creates new link between user and diagnosis in active_diagnoses
+        // if no such connection existed previously
+        public static function createActiveDiagnoses(array $diagnosesIds, int $patientId) {
+            self::Connect();
+            $query = "  INSERT INTO active_diagnoses (patientId, diagnosisId)
+                        VALUES (?, ?)";
+            $statement = self::$connection->prepare($query);
+            $statement->bind_param("ii", $patientId, $diagnosisId);
+            foreach ($diagnosesIds as $diagnosisId) {
+                if (!self::checkActiveDiagnosisExists($diagnosisId, $patientId)) {
+                    $statement->execute();
+                } 
+            }
+        }
+
+        public static function deleteActiveDiagnoses(array $diagnosesIds, int $patientId) {
             self::Connect();
             $query = "  DELETE FROM active_diagnoses
-                        WHERE diagnosisId = ? and patientId = ?";
+                        WHERE diagnosisId = ? AND patientId = ?";
             $statement = self::$connection->prepare($query);
             $statement->bind_param("ii", $diagnosisId, $patientId);
-            $statement->execute();
+            foreach ($diagnosesIds as $diagnosisId) {
+                if (self::checkActiveDiagnosisExists($diagnosisId, $patientId)) {
+                    $statement->execute();
+                }
+            }
         }
 
         public static function deleteReportDiagnosisMade(int $reportId, int $diagnosisId) {
@@ -75,22 +93,6 @@
             $statement->execute();
             $result = $statement->get_result();
             return $result->fetch_all(MYSQLI_ASSOC);
-        }
-
-        public static function setActiveDiagnoses(array $diagnosesIds, int $userId) {
-            self::Connect();
-
-            foreach ($diagnosesIds as $diagnosis) {
-                if (!self::checkActiveDiagnosisExists($diagnosis, $userId)) {
-                    // Creates new link between user and diagnosis in active_diagnoses
-                    // if no such connection existed previously
-                    $query = "  INSERT INTO active_diagnoses (patientId, diagnosisId)
-                                VALUES (?, ?)";
-                    $statement = self::$connection->prepare($query);
-                    $statement->bind_param("ii", $userId, $diagnosis);
-                    $statement->execute();
-                } 
-            }
         }
 
         public static function setReportDiagnosesMade (array $diagnoses,int $reportId) {

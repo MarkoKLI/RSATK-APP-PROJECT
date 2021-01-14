@@ -14,12 +14,13 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>As yet unnamed</title>
 </head>
 <body>
-    <h1> РСАТК ПРОЕКТ АПЛИКАЦИЈА </h1>
+    <h3> РСАТК ПРОЕКТ АПЛИКАЦИЈА </h3>
     <?php
-        require_once("controllers/conversion.service.php");
+        require("controllers/services/conversion.service.php");
 
         if ( isset($_POST["action"]) ) {
             $action = ConversionService::SecureInput($_POST["action"]);
@@ -32,12 +33,20 @@
         require_once("views/navbar.php");
 
         switch ($action) {
+            case "process_login": {
+                require("controllers/login.controller.php");
+                break;
+            }
+            case "show_login": {
+                require("views/login.php");
+                break;
+            }
             case "show_home": {
-                require_once("views/home.php");
+                require("views/home.php");
                 break;
             } 
             default: {
-                require_once("views/error404.php");
+                require("views/error404.php");
                 break;
             }
         }
