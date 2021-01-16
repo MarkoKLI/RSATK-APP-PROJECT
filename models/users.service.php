@@ -15,7 +15,7 @@
 
         public static function getUserById(int $userId) {
             self::Connect();
-            $query = "  SELECT id, name, surname, email, telNr, address, description
+            $query = "  SELECT id, name, surname, isDoctor, email, telNr, address, description
                         FROM users
                         WHERE id = ?";
             $statement = self::$connection->prepare($query);

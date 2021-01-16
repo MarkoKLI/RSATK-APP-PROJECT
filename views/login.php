@@ -1,7 +1,8 @@
 <div class="container col-md-5">
     <h2>Login to |As yet unnamed|</h2>
-    <form action="?action=process_login" method="POST" 
+    <form action="index.php" method="POST" 
         class="needs-validation" novalidate>
+        <input type="hidden" name="action" value="process_login" >
         <div class="form-group">
             <label for="email">Email:</label>
             <input type="email" class="form-control" name="email" id="email" placeholder="Enter email" 

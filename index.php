@@ -35,6 +35,8 @@
         switch ($action) {
             case "process_login": {
                 require("controllers/login.controller.php");
+
+                header("Location: index.php?action=show_home");
                 break;
             }
             case "show_login": {
