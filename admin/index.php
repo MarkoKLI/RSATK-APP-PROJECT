@@ -19,7 +19,7 @@
 <body>
     <h1> РСАТК ПРОЕКТ АПЛИКАЦИЈА - АДМИНИСТРАЦИЈА </h1>
     <?php
-        require_once("../controllers/conversion.service.php");
+        require_once("../controllers/services/conversion.service.php");
 
         if ( isset($_POST["action"]) ) {
             $action = ConversionService::SecureInput($_POST["action"]);
