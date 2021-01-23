@@ -5,12 +5,12 @@
 }
 
 .nav-item {
-    border: lightcyan 1px solid;
-    background-color: whitesmoke;
+    border: lightgray 1px solid;
+    background-color: white;
 }
 
 .nav-item a:hover {
-    background-color: lightcyan;
+    background-color: lightgray;
 }
 
 .login-view {
