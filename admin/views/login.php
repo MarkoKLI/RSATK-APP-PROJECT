@@ -1,14 +1,12 @@
-<div class="container col-6">
-    <h2>Login to |As yet unnamed|</h2>
+<div class="container col-6 login-view">
+    <h2>Administrator login</h2>
     <form action="index.php" method="POST" 
         class="needs-validation" novalidate>
         <input type="hidden" name="action" value="process_login" >
         <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" class="form-control" name="email" id="email" placeholder="Enter email" 
-                required value="<?php echo (isset($email)) ? $email : "" ; ?>"
-                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" >
-            <div class="invalid-feedback">Please enter a valid email address</div>
+            <label for="email">Username:</label>
+            <input class="form-control" name="username" id="username" placeholder="Enter username" 
+                required value="<?php echo (isset($username)) ? $username : "" ; ?>">
         </div>
         <div class="form-group">
             <label for="pwd">Password:</label>
