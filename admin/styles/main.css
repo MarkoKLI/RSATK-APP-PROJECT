@@ -17,11 +17,26 @@
     margin-top: 2em;
 }
 
-.card {
+.container-card {
     margin-top: 1em;
 }
 
-.create-user-card {
+.create-user-card, .create-admin-card {
     width: 49%;
+    margin-bottom: 1em;
+}
+
+.create-admin-card {
+    height: 100%;
+}
+
+.table-container {
+    max-height: 70vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.custom-switch {
+    padding-left: 3.25rem;
     margin-bottom: 1em;
 }
