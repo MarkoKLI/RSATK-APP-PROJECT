@@ -1,4 +1,6 @@
 <?php 
+    require("./db.service.php");
+
     class DiagnosesService extends DBService {
 
         public static function checkActiveDiagnosisExists(int $diagnosisId, int $userId) {
