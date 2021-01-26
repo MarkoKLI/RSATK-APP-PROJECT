@@ -4,6 +4,10 @@
     padding-left: 2em;
 }
 
+.navbar {
+    background-color: #e3f2fd;
+}
+
 .nav-item {
     border: lightgray 1px solid;
     background-color: white;
