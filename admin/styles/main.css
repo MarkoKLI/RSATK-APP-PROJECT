@@ -28,9 +28,6 @@
 .create-user-card, .create-admin-card {
     width: 49%;
     margin-bottom: 1em;
-}
-
-.create-admin-card {
     height: 100%;
 }
 

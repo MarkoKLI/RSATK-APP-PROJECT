@@ -2,7 +2,6 @@
 // Fajlov e za testiranje funkcii i generalno stvari izolirano od aplikacijata
 // Treba da se izbrise na kraj
 include("./models/users-admin.service.php");
-include("../models/users.service.php");
 
 // $specialtyId = NULL;
 // $isDoctor = false;

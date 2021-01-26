@@ -46,6 +46,17 @@
             }
         }
 
+        public static function deleteUser($id) {
+            self::Connect();
+
+            $query = "  DELETE FROM users
+                        WHERE id = ?";
+
+            $statement = self::$connection->prepare($query);
+            $statement->bind_param("i", $id);
+            $statement->execute();
+        }
+
         public static function getAdminPasswordDetailsByUsername($username) {
             self::Connect();
 
@@ -54,6 +65,30 @@
 
             $statement = self::$connection->prepare($query);
             $statement->bind_param("s",$username);
+            $statement->execute();
+            $result = $statement->get_result();
+            return $result->fetch_assoc();
+        }
+
+        public static function getAllAdmins() {
+            self::Connect();
+
+            $query = "  SELECT id, username
+                        FROM admins";
+
+            $statement = self::$connection->prepare($query);
+            $statement->execute();
+            $result = $statement->get_result();
+            return $result->fetch_assoc();
+        }
+
+        public static function getAllUsers() {
+            self::Connect();
+
+            $query = "  SELECT id, name, surname, isDoctor
+                        FROM users";
+
+            $statement = self::$connection->prepare($query);
             $statement->execute();
             $result = $statement->get_result();
             return $result->fetch_assoc();

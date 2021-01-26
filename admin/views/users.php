@@ -22,39 +22,39 @@
                 </thead>
                 <tbody id="table-users">
                     <tr>
-                        <th>1</th>
-                        <th>Thirteen</th>
-                        <th>Doctor</th>
-                        <th>
+                        <td>1</td>
+                        <td>Thirteen</td>
+                        <td>Doctor</td>
+                        <td>
                             <form action="<?php echo $location; ?>" method="post">
                                 <input type="hidden" name="action" value="delete_user">
                                 <input type="hidden" name="userId" value="1">
                                 <input class="btn btn-outline-danger btn-sm" type="submit" value="Бриши!">
                             </form>
-                        </th>
+                        </td>
                     </tr>
                     <tr>
-                        <th>2</th>
-                        <th>Lisa Cuddy</th>
-                        <th>Patient</th>
-                        <th><form action="<?php echo $location; ?>" method="post">
+                        <td>2</td>
+                        <td>Lisa Cuddy</td>
+                        <td>Patient</td>
+                        <td><form action="<?php echo $location; ?>" method="post">
                                 <input type="hidden" name="action" value="delete_user">
                                 <input type="hidden" name="userId" value="1">
                                 <input class="btn btn-outline-danger btn-sm" type="submit" value="Бриши!">
                             </form>
-                        </th>
+                        </td>
                     </tr>
                     <tr>
-                        <th>3</th>
-                        <th>Gregory House</th>
-                        <th>Doctor</th>
-                        <th>
+                        <td>3</td>
+                        <td>Gregory House</td>
+                        <td>Doctor</td>
+                        <td>
                             <form action="<?php echo $location; ?>" method="post">
                                 <input type="hidden" name="action" value="delete_user">
                                 <input type="hidden" name="userId" value="1">
                                 <input class="btn btn-outline-danger btn-sm" type="submit" value="Бриши!">
                             </form>
-                        </th>
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -167,6 +167,48 @@
                     </div>
                     <input class="btn btn-primary" type="submit" value="Креирај">
                 </form>
+                <hr>
+                <div class="admin-table-container mt-2">
+                    <table class="table">
+                        <caption>Постоечки профили</caption>
+                        <thead>
+                            <th>Корисничко име</th>
+                            <th>Избриши</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Admin</td>
+                                <td>
+                                    <form action="<?php echo $location; ?>" method="post">
+                                        <input type="hidden" name="action" value="delete_admin">
+                                        <input type="hidden" name="userId" value="1">
+                                        <input class="btn btn-outline-danger btn-sm" type="submit" value="Бриши!">
+                                    </form>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Admin</td>
+                                <td>
+                                    <form action="<?php echo $location; ?>" method="post">
+                                        <input type="hidden" name="action" value="delete_admin">
+                                        <input type="hidden" name="userId" value="1">
+                                        <input class="btn btn-outline-danger btn-sm" type="submit" value="Бриши!">
+                                    </form>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Admin</td>
+                                <td>
+                                    <form action="<?php echo $location; ?>" method="post">
+                                        <input type="hidden" name="action" value="delete_admin">
+                                        <input type="hidden" name="userId" value="1">
+                                        <input class="btn btn-outline-danger btn-sm" type="submit" value="Бриши!">
+                                    </form>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>

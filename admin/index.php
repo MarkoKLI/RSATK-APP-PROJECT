@@ -34,7 +34,7 @@
         } else if ( isset($_GET["action"]) ) {
             $action = ConversionService::SecureInput($_GET["action"]);
         } else {
-            $action = "show_home";
+            $action = "show_users";
         }
 
         $location = $_SERVER["PHP_SELF"];
@@ -45,10 +45,6 @@
             <div class="col-10">
     <?php  
         switch ($action) {
-            case "show_home": {
-                require_once("./views/home.php");
-                break;
-            } 
             case "show_login": {
                 require_once("./views/login.php");
                 break;
