@@ -20,7 +20,7 @@
         </div>
 
         <div class="col-md-6"> <!-- Rank & Qualifications -->
-          <h5 style="color:#3AAA64"> Doctor, <small>Dept. of CSE, Jatiya Kabi Kazi Nazrul Islam University</small></h5>
+          <h5 style="color:#3AAA64"> Doctor, <small>Dept. of CSE,  Nazrul Islam University</small></h5>
           <p>PhD (On study at BUET), M.Sc. in research on ICT(UPC, Spain), M.Sc. in research on ICT(UCL, Belgium).</p>
           <p>Address: Gloucester St., New Jersey, USA</p>
         </div>
