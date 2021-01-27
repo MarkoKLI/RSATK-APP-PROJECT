@@ -103,7 +103,7 @@
                         <label for="email" class="col-4 col-form-label">Email: </label>
                         <div class="col-8">
                             <input class="form-control" type="email" id="email" name="email" 
-                            placeholder="Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                            placeholder="Email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$">
                         </div>
                     </div>
                     <div class="form-group row">

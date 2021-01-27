@@ -1,5 +1,5 @@
 <?php 
-    require("./db.service.php");
+    require("./models/db.service.php");
     
     class UsersService extends DBService {
         
@@ -27,9 +27,9 @@
             return $result->fetch_assoc();
         }
 
-        public static function getUserPasswordDetailsByEmail($email) {
+        public static function getUserDetailsByEmail($email) {
             self::Connect();
-            $query = "  SELECT passwordSalt, passwordHash
+            $query = "  SELECT id, isDoctor, passwordSalt, passwordHash
                         FROM users WHERE email = ?";
             $statement = self::$connection->prepare($query);
             $statement->bind_param("s",$email);
