@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>As yet unnamed</title>
+    <title>As yet unnamed | Admin</title>
 </head>
 
 <body>
@@ -45,6 +45,10 @@
             <div class="col-10">
     <?php  
         switch ($action) {
+            case "create_user": {
+                require_once("./controllers/create-user.controller.php");
+                break;
+            }
             case "show_login": {
                 require_once("./views/login.php");
                 break;

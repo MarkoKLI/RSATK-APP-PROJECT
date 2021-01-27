@@ -17,7 +17,7 @@ class ConversionService {
     }
 
     // Secures input values from possible injection attacks which could break the code.
-    public static function SecureInput(string $input) {
+    public static function SecureInput(?string $input) {
         $output = htmlspecialchars( stripslashes( trim($input)));
         return $output;
     }

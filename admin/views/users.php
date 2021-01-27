@@ -70,7 +70,7 @@
             </div>
             <div class="card-body">
                 <form action="index.php" method="POST" class="needs-validation" novalidate>
-                    <input type="hidden" name="action" value="create-user">
+                    <input type="hidden" name="action" value="create_user">
                     <div class="form-group row">
                         <label for="name" class="col-4 col-form-label">Име: </label>
                         <div class="col-8">
@@ -121,7 +121,7 @@
                     </div>
                     <div class="row justify-content-end">
                         <div class="custom-control custom-switch col-8">
-                            <input type="checkbox" class="custom-control-input" id="isDoctor" value="true">
+                            <input type="checkbox" class="custom-control-input" id="isDoctor" name="isDoctor" value="true">
                             <label class="custom-control-label" for="isDoctor">Докторски профил</label>
                         </div>
                     </div>
@@ -129,10 +129,11 @@
                         <label for="dob" class="col-4 col-form-label">Одделение: </label>
                         <div class="col-8">
                             <select class="form-control" name="specialty" id="specialty">
-                            <option value="ad">sad</option>
-                            <option value="ad">bad</option>
-                            <option value="ad">mad</option>
-                            <option value="ad">rad</option>
+                                <option selected disabled></option>
+                                <option value="1">sad</option>
+                                <option value="2">bad</option>
+                                <option value="3">mad</option>
+                                <option value="4">rad</option>
                             </select>
                         </div>
                     </div>
@@ -238,8 +239,13 @@
 
         $("#specialtyDiv").hide();
         $("#isDoctor").click(function() {
-            $("#specialtyDiv").toggle();
-            console.log("click");
+            if ($("#isDoctor").is(":checked") ) {
+                $("#specialtyDiv").show();
+                $("#specialty").attr("required",true);
+            } else {
+                $("#specialtyDiv").hide();
+                $("#specialty").attr("required",false);
+            }
         })
     });
 </script>
