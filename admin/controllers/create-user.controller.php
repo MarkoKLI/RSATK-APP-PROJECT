@@ -13,7 +13,7 @@
 
     $specialtyId = ($specialtyId == 0)? null : $specialtyId;
 
-    echo UsersAdminService::createUser($name, $surname, $embr, $email, $phoneNr,
+    $success = UsersAdminService::createUser($name, $surname, $embr, $email, $phoneNr,
                                     $dob, $specialtyId, $address, $isDoctor);
 
     header("Location: " . $location . "?action=show_users");

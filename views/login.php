@@ -11,17 +11,39 @@
                     <div class="form-group row">
                         <label class="col-2 col-form-label" for="email">Email:</label>
                         <div class="col-10">
-                            <input type="email" class="form-control" name="email" id="email" placeholder="Enter email" 
+                            <input type="email" name="email" id="email" placeholder="Enter email" 
+                                class="form-control <?php echo ($requestFailed || $invalidCredentials) ? "is-invalid" : ""; ?>" 
                                 required value="<?php echo (isset($email)) ? $email : "" ; ?>"
                                 pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$" >
-                            <div class="invalid-feedback">Please enter a valid email address</div>
+                            <div class="invalid-feedback">
+                                <?php 
+                                    if ($requestFailed && !$invalidCredentials) {
+                                        echo "Something went wrong. Please try again!";
+                                    } else if (!$requestFailed && $invalidCredentials) {
+                                        echo "";
+                                    } else {
+                                        echo "Please enter a valid email address";
+                                    }
+                                ?>
+                            </div>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-2 col-form-label" for="pwd">Password:</label>
                         <div class="col-10">
-                            <input type="password" class="form-control" name="pwd" id="pwd" placeholder="Enter password" required >
-                            <div class="invalid-feedback">Please enter a password</div>
+                            <input type="password" name="pwd" id="pwd" placeholder="Enter password" required
+                            class="form-control <?php echo ($requestFailed || $invalidCredentials) ? "is-invalid" : ""; ?>" >
+                            <div class="invalid-feedback">
+                                <?php 
+                                    if ($requestFailed && !$invalidCredentials) {
+                                        echo "";
+                                    } else if (!$requestFailed && $invalidCredentials) {
+                                        echo "Wrong username or password. Please try again!";
+                                    } else {
+                                        echo "Please enter a valid email address";
+                                    }
+                                ?>
+                            </div>
                         </div>
                     </div>
                     <div class="checkbox">

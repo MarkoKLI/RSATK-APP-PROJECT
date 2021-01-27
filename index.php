@@ -45,6 +45,13 @@
                 require("views/login.php");
                 break;
             }
+            case "process_logout": {
+                $expiration = time() - 3600;
+                setcookie("userType", "", $expiration);
+                setcookie("userId", "", $expiration);
+                require("views/home.php");
+                break;
+            }
             case "show_login": {
                 require("views/login.php");
                 break;

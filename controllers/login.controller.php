@@ -2,14 +2,28 @@
     require("classes/password.class.php");
     require("./models/users.service.php");
 
+    $requestFailed = false;
+    $invalidCredentials = false;
+
     if (!isset($_POST["email"]) || !isset($_POST["pwd"])) {
-        die("Something went wrong, please try again");
+        $loginError = "Something went wrong. Please try again!";
+        $requestFailed = true;
+    } else {
+        $email = ConversionService::SecureInput($_POST["email"]);
+        $password = ConversionService::SecureInput($_POST["pwd"]);
+        $userDetails = UsersService::getUserDetailsByEmail($email);
+
+        $validLogin = Password::validatePassword($userDetails["passwordHash"], $userDetails["passwordSalt"], $password);
+
+        if ($validLogin) {
+            $userType = ($userDetails['isDoctor']) ? "DOCTOR" : "PATIENT";
+            $expiration = time() + 86400;
+            setcookie("userType", $userType, $expiration);
+            setcookie("userId", $userDetails["id"], $expiration);
+            header("Location: index.php?action=show_home");
+        } else {
+            $loginError = "Wrong username or password. Please try again!";
+            $invalidCredentials = true;
+        }
     }
-
-    $email = ConversionService::SecureInput($_POST["email"]);
-    $password = ConversionService::SecureInput($_POST["pwd"]);
-    $userDetails = UsersService::getUserDetailsByEmail($email);
-
-    $validLogin = Password::validatePassword($userDetails["passwordHash"], $userDetails["passwordSalt"], $password);
-
 ?>
