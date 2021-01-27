@@ -20,52 +20,27 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo mr-auto"><a href="index.html">Medilab</a></h1>
+      <h1 class="logo mr-auto"><a href="index.php">Medilab</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li class="active"><a href="index.html">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#departments">Departments</a></li>
-          <li><a href="#doctors">Doctors</a></li>
-          <li><a href="C:\wamp64\www\RSATK-APP-PROJECT\views\login.php">Log in</a> </li>
-          <li><a href="#contact">Contact</a></li>
+          <li class="active"><a href="index.php">Home</a></li>
+          <li><a href="<?php echo $location . "#about"; ?>">About</a></li>
+          <li><a href="<?php echo $location . "#departments"; ?>">Departments</a></li>
+          <li><a href="<?php echo $location . "?action=show_profile"; ?>">Profile</a></li>
+          <li><a href="<?php echo $location . "?action=show_login"; ?>">Log in</a> </li>
+          <li><a href="<?php echo $location . "#contact"; ?>">Contact</a></li>
 
         </ul>
       </nav><!-- .nav-menu -->
 
-      <a href="#appointment" class="appointment-btn scrollto">Make an Appointment</a>
+      <a href="<?php echo $location . "?action=show_appointments"; ?>" class="appointment-btn scrollto">Make an Appointment</a>
 
     </div>
   </header><!-- End Header -->
 
-  <main id="main">
 
-    <!-- ======= Breadcrumbs Section ======= -->
-    <section class="breadcrumbs">
-      <div class="container">
-
-        <div class="d-flex justify-content-between align-items-center">
-          <h2>Inner Page</h2>
-          <ol>
-            <li><a href="index.html">Home</a></li>
-            <li>Inner Page</li>
-          </ol>
-        </div>
-
-      </div>
-    </section><!-- End Breadcrumbs Section -->
-
-    <section class="inner-page">
-      <div class="container">
-        <p>
-          Example inner page template
-        </p>
-      </div>
-    </section>
-
-  </main><!-- End #main -->
 
   

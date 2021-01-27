@@ -42,6 +42,8 @@
         } else {
             $action = "show_home";
         }
+
+        $location=$_SERVER['PHP_SELF'];
         
         require_once("views/navbar.php");
 
