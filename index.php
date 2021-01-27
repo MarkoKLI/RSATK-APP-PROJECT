@@ -36,18 +36,15 @@
         }
 
         $location=$_SERVER['PHP_SELF'];
-
-        switch ($action) {
-            case "process_login": {
-                require("controllers/login.controller.php");
-                header("Location: index.php?action=show_home");
-                break;
-            }
-        }
         
         require_once("views/navbar.php");
 
         switch ($action) {
+            case "process_login": {
+                require("controllers/login.controller.php");
+                require("views/login.php");
+                break;
+            }
             case "show_login": {
                 require("views/login.php");
                 break;
