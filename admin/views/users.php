@@ -147,17 +147,19 @@
             </div>
             <div class="card-body">
                 <form action="index.php" method="POST" class="needs-validation" novalidate>
-                    <input type="hidden" name="action" value="create-admin">
+                    <input type="hidden" name="action" value="create_admin">
                     <div class="form-group row">
                         <label for="username" class="col-4 col-form-label">Корисничко име: </label>
                         <div class="col-8">
-                            <input class="form-control" id="username" placeholder="Корисничко име:">
+                            <input class="form-control" id="username" 
+                                name="username" placeholder="Корисничко име:">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="surname" class="col-4 col-form-label">Лозинка: </label>
                         <div class="col-8">
-                            <input type="password" class="form-control" id="pwd" placeholder="Лозинка">
+                            <input type="password" class="form-control" id="pwd" 
+                                name="pwd" placeholder="Лозинка">
                         </div>
                     </div>
                     <div class="form-group row">

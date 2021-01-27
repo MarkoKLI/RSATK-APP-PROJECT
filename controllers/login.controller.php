@@ -20,7 +20,7 @@
             $expiration = time() + 86400;
             setcookie("userType", $userType, $expiration);
             setcookie("userId", $userDetails["id"], $expiration);
-            header("Location: index.php?action=show_home");
+            header("Location: " . $location);
         } else {
             $loginError = "Wrong username or password. Please try again!";
             $invalidCredentials = true;

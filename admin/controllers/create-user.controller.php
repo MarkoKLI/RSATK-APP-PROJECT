@@ -1,5 +1,6 @@
 <?php
     require_once("./models/users-admin.service.php");
+    require("../controllers/classes/password.class.php");
 
     $name = ConversionService::SecureInput($_POST["name"]);
     $surname = ConversionService::SecureInput($_POST['surname']);
@@ -12,9 +13,13 @@
     $specialtyId = (int)ConversionService::SecureInput($_POST['specialty']);
 
     $specialtyId = ($specialtyId == 0)? null : $specialtyId;
+    $password = new Password($embr);
+    $passwordS = $password->getPasswordSalt();
+    $passwordH = $password->getPassword();
 
     $success = UsersAdminService::createUser($name, $surname, $embr, $email, $phoneNr,
-                                    $dob, $specialtyId, $address, $isDoctor);
+                                            $dob, $specialtyId, $address, $isDoctor,
+                                            $passwordS, $passwordH);
 
     header("Location: " . $location . "?action=show_users");
 ?>

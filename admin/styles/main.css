@@ -41,3 +41,11 @@
     padding-left: 3.25rem;
     margin-bottom: 1em;
 }
+
+.login-form-row {
+    height: 85vh;
+}
+
+.login-form-container {
+    align-self: center;
+}

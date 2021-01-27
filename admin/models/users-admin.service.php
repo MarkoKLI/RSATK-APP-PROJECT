@@ -1,17 +1,14 @@
 <?php 
     include("./../models/db.service.php");
-    include("./../controllers/classes/password.class.php");
 
     class UsersAdminService extends DBService {
         
         public static function createUser(string $name, string $surname, string $embr,
                                         string $email, string $phoneNr, string $dob,
-                                        ?int $specialyId, string $address, bool $isDoctor) {
+                                        ?int $specialyId, string $address, bool $isDoctor,
+                                        string $passwordSalt, string $passwordHash) {
             self::Connect();
 
-            $password = new Password($embr);
-            $passwordH = $password->getPassword();
-            $passwordS = $password->getPasswordSalt();
             $isDoctor = intval($isDoctor);
             $query = "  INSERT INTO users (name, surname, embr, email, telNr, DOB, isDoctor, passwordSalt, passwordHash, specialtyId, address)
                         VALUES (?,?,?,?,?,?,?,?,?,?,?)";
@@ -19,7 +16,7 @@
             $statement = self::$connection->prepare($query);
             $statement->bind_param("ssssssissis", $name, $surname, $embr,
                                                     $email, $phoneNr, $dob,
-                                                    $isDoctor, $passwordS, $passwordH, 
+                                                    $isDoctor, $passwordSalt, $passwordHash, 
                                                     $specialyId, $address);
             $statement->execute();
             if (self::$connection->errno) {
@@ -27,17 +24,14 @@
             }
         }
 
-        public static function createAdmin(string $username, string $password) {
+        public static function createAdmin(string $username, string $passwordHash, string $passwordSalt) {
             self::Connect();
 
-            $password = new Password($password);
-            $passwordH = $password->getPassword();
-            $passwordS = $password->getPasswordSalt();
             $query = "  INSERT INTO admins (username, passwordHash, passwordSalt)
                         VALUES (?,?,?)";
 
             $statement = self::$connection->prepare($query);
-            $statement->bind_param("sss", $username, $passwordH, $passwordS);
+            $statement->bind_param("sss", $username, $passwordHash, $passwordSalt);
             $statement->execute();
             if (self::$connection->errno) {
                 return self::$connection->error;
@@ -58,7 +52,7 @@
         public static function getAdminPasswordDetailsByUsername($username) {
             self::Connect();
 
-            $query = "  SELECT passwordSalt, passwordHash
+            $query = "  SELECT id, passwordSalt, passwordHash
                         FROM admins WHERE username = ?";
 
             $statement = self::$connection->prepare($query);

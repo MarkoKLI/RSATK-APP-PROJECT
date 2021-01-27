@@ -2,9 +2,9 @@
     require_once($_SERVER["DOCUMENT_ROOT"] . "/RSATK-APP-PROJECT/controllers/services/conversion.service.php");
 
     class Password {
-        public static function validatePassword(string $passwordHash, 
-                                                string $passwordSalt, 
-                                                string $plaintextPass) {
+        public static function validatePassword(?string $passwordHash, 
+                                                ?string $passwordSalt, 
+                                                ?string $plaintextPass) {
             $checkValue = hash("sha512", $plaintextPass . $passwordSalt);
             $checkValue = ConversionService::Hex2ascii($checkValue);
             return $checkValue == $passwordHash;

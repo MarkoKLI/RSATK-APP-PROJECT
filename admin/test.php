@@ -13,6 +13,8 @@ include("./models/users-admin.service.php");
 // echo !Password::validatePassword($result['passwordHash'], $result['passwordSalt'], "122345");
 
 echo "<br>";
+echo dirname(dirname(__FILE__));
+
 //var_dump(UsersAdminService::getAdminPasswordDetailsByUsername("admin"));
 
 // UsersAdminService::createAdmin("admin","admin");

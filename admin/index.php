@@ -11,6 +11,8 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- Font Awesome CSS CDN source-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     
     <link rel="stylesheet" href="styles/main.css">
     <meta charset="UTF-8">
@@ -29,13 +31,21 @@
     <?php
         require_once("../controllers/services/conversion.service.php");
         
-        if ( isset($_POST["action"]) ) {
-            $action = ConversionService::SecureInput($_POST["action"]);
-        } else if ( isset($_GET["action"]) ) {
-            $action = ConversionService::SecureInput($_GET["action"]);
+        if (isset($_COOKIE["adminId"])) {
+            if (isset($_POST["action"])) {
+                $action = ConversionService::SecureInput($_POST["action"]);
+            } else if ( isset($_GET["action"]) ) {
+                $action = ConversionService::SecureInput($_GET["action"]);
+            } else {
+                $action = "show_users";
+            }
         } else {
-            $action = "show_users";
+            $action = ConversionService::SecureInput($_POST["action"]);
+            $action = ( $action == "show_login" || 
+                        $action == "process_login") ?
+                        $action : "show_login";
         }
+
 
         $location = $_SERVER["PHP_SELF"];
 
@@ -45,24 +55,40 @@
             <div class="col-10">
     <?php  
         switch ($action) {
+            case "process_login": {
+                require_once("./controllers/login-admin.controller.php");
+                require("./views/login.php");
+                break;
+            }
+            case "process_logout": {
+                $expiration = time() - 3600;
+                setcookie("adminId","",$expiration);
+                header("Location: " . $location);
+                break;
+            }
+            case "create_admin": {
+                require_once("./controllers/create-admin.controller.php");
+                require("./views/users.php");
+                break;
+            }
             case "create_user": {
                 require_once("./controllers/create-user.controller.php");
                 break;
             }
             case "show_login": {
-                require_once("./views/login.php");
+                require("./views/login.php");
                 break;
             }
             case "show_users": {
-                require_once("./views/users.php");
+                require("./views/users.php");
                 break;
             }
             case "show_departments": {
-                require_once("./views/departments.php");
+                require("./views/departments.php");
                 break;
             }
             case "show_diagnoses": {
-                require_once("./views/diagnoses.php");
+                require("./views/diagnoses.php");
                 break;
             }
             default: {
