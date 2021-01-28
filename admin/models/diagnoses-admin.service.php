@@ -1,6 +1,4 @@
 <?php 
-    include("./db.service.php");
-
     class DiagnosesAdminService extends DBService {
         
         public static function createDiagnosis(string $name, string $desc) {
