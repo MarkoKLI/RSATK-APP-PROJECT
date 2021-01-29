@@ -15,6 +15,7 @@
         $("#submit").val("Креирај");
     }
 </script>
+
 <div class="card container-card list-card">
     <div class="card-header">
         <h2>Дијагнози</h2>
@@ -87,8 +88,10 @@
                     </div>
                 </div>
             </div>
-            <input class="btn btn-outline-primary ml-2" id="submit" type="submit" value="Креирај">
-            <input class="btn btn-outline-secondary ml-3" type="reset" onclick="resetUpdate()" value="Откажи">
+            <div class="col-3 justify-content-center">
+                <input class="btn btn-outline-primary" type="submit" value="Креирај!">
+                <input class="btn btn-outline-secondary ml-3" type="reset" onclick="resetUpdate()" value="Откажи">
+            </div>
         </form>
     </div>
 </div>
