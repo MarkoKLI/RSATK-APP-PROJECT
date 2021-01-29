@@ -21,6 +21,13 @@
         <h2>Дијагнози</h2>
     </div>
     <div id="accordion" class="card-body">
+        <div class="row form-group  justify-content-center">
+            <label class="col-form-label col-2" for="search-diagnoses">Пребарај дијагноза:</label>
+            <div class="col-9">
+                <input type="search" name="search-diagnoses" id="search-diagnoses"
+                        placeholder="Search" class="form-control">
+            </div>
+        </div>
     <?php foreach ($_SESSION["diagnoses"] as $diagnosis): ?>
         <div class="card">
             <div class="card-header" id="title<?php echo $diagnosis["id"]; ?>">
