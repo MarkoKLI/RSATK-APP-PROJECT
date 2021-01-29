@@ -41,21 +41,19 @@
       <a href="<?php echo $location . "?action=show_patients"; ?>" class="appointment-btn scrollto">Patients</a></div>
 
       <?php
-      $class='';
+      
     if($_COOKIE['userType']=='PATIENT') {
-      echo "<div class='ShowForPatient'>TEST</div>";
       ?>
-      <script type="text/javascript">$('#ShowForDoctor').hide()</script>
+      <script type="text/javascript">$('.ShowForDoctor').hide()</script>
       <?php
     } else if($_COOKIE['userType']=='DOCTOR') {
-      echo "<div class='ShowForDoctor'>TEST</div>";
       ?>
-      <script type="text/javascript">$('#ShowForPatient').hide()</script>
+      <script type="text/javascript">$('.ShowForPatient').hide()</script>
       <?php                                     
     }else {
       ?>
-      <script type="text/javascript">$('#ShowForPatient').hide()</script>
-      <script type="text/javascript">$('#ShowForDoctor').hide()</script>
+      <script type="text/javascript">$('.ShowForPatient').hide()</script>
+      <script type="text/javascript">$('.ShowForDoctor').hide()</script>
       <?php 
     }
 
