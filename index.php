@@ -38,22 +38,26 @@
         }
 
         $location=$_SERVER['PHP_SELF'];
-        
-        require_once("views/navbar.php");
 
         switch ($action) {
             case "process_login": {
                 require("controllers/login.controller.php");
-                require("views/login.php");
+                $action = "show_login";
                 break;
             }
             case "process_logout": {
                 $expiration = time() - 3600;
                 setcookie("userType", "", $expiration);
                 setcookie("userId", "", $expiration);
-                require("views/home.php");
+                $action = "show_home";
                 break;
             }
+        }
+        
+        require_once("views/navbar.php");
+
+        switch ($action) {
+           
             case "show_login": {
                 require("views/login.php");
                 break;
