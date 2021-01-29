@@ -1,6 +1,4 @@
 <?php 
-    include("./db.service.php");
-
     class DepartmentsAdminService extends DBService {
         
         public static function createDepartment(string $title, string $desc) {

@@ -31,13 +31,18 @@
     <?php
         require_once("../controllers/services/conversion.service.php");
         
-        if (isset($_COOKIE["adminId"])) {
+        $adminId = filter_input(INPUT_COOKIE,"adminId",FILTER_VALIDATE_INT);
+        if ($adminId) {
             if (isset($_POST["action"])) {
                 $action = ConversionService::SecureInput($_POST["action"]);
             } else if ( isset($_GET["action"]) ) {
                 $action = ConversionService::SecureInput($_GET["action"]);
             } else {
                 $action = "show_users";
+                unset($_SESSION["admins"]);                
+                unset($_SESSION["users"]);
+                unset($_SESSION["departments"]);
+                unset($_SESSION["diagnises"]);
             }
         } else {
             $action = ConversionService::SecureInput($_POST["action"]);
@@ -46,7 +51,6 @@
                         $action : "show_login";
         }
 
-
         $location = $_SERVER["PHP_SELF"];
 
         require("./views/navbar.php");
@@ -54,6 +58,8 @@
 
             <div class="col-10">
     <?php  
+        require_once("./controllers/prepare-admin.controller.php");
+
         switch ($action) {
             case "process_login": {
                 require_once("./controllers/login-admin.controller.php");
@@ -73,6 +79,17 @@
             }
             case "create_user": {
                 require_once("./controllers/create-user.controller.php");
+                require("./views/users.php");
+                break;
+            }
+            case "delete_admin": {
+                require_once("./controllers/delete-admin.controller.php");
+                require("./views/users.php");
+                break;
+            }
+            case "delete_user": {
+                require_once("./controllers/delete-user.controller.php");
+                require("./views/users.php");
                 break;
             }
             case "show_login": {

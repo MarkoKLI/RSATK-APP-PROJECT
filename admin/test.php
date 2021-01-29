@@ -1,6 +1,7 @@
 <?php 
 // Fajlov e za testiranje funkcii i generalno stvari izolirano od aplikacijata
 // Treba da se izbrise na kraj
+include("./models/db.service.php");
 include("./models/users-admin.service.php");
 
 // $specialtyId = NULL;
@@ -13,7 +14,9 @@ include("./models/users-admin.service.php");
 // echo !Password::validatePassword($result['passwordHash'], $result['passwordSalt'], "122345");
 
 echo "<br>";
-echo dirname(dirname(__FILE__));
+$arr = UsersAdminService::getAllAdmins();
+
+var_dump($arr);
 
 //var_dump(UsersAdminService::getAdminPasswordDetailsByUsername("admin"));
 
