@@ -52,6 +52,11 @@
       ?>
       <script type="text/javascript">$('#ShowForPatient').hide()</script>
       <?php                                     
+    }else {
+      ?>
+      <script type="text/javascript">$('#ShowForPatient').hide()</script>
+      <script type="text/javascript">$('#ShowForDoctor').hide()</script>
+      <?php 
     }
 
       ?>    
