@@ -143,10 +143,13 @@
                         <div class="col-8">
                             <select class="form-control" name="specialty" id="specialty">
                                 <option value=""></option>
-                                <option value="1" <?php echo ($specialtyId==1)? "selected": ""; ?>>sad</option>
-                                <option value="2" <?php echo ($specialtyId==1)? "selected": ""; ?>>bad</option>
-                                <option value="3" <?php echo ($specialtyId==1)? "selected": ""; ?>>mad</option>
-                                <option value="4" <?php echo ($specialtyId==1)? "selected": ""; ?>>rad</option>
+                                <?php foreach ($_SESSION["specialties"] as $specialty): ?>
+                                    <option 
+                                        value="<?php echo $specialty["id"]; ?>" 
+                                        <?php echo ( $specialtyId == $specialty["id"] )? "selected": ""; ?>>
+                                        <?php echo $specialty["title"]; ?>
+                                    </option>
+                                <?php endforeach;?>
                             </select>
                             <div class="invalid-feedback">
                                 <?php echo "Please select doctor's specialty (department)!"; ?>
@@ -230,7 +233,10 @@
                                         <input type="hidden" name="action" value="delete_admin">
                                         <input type="hidden" name="adminId" 
                                                 value="<?php echo $admin["id"]; ?>">
-                                        <input class="btn btn-outline-danger btn-sm" type="submit" value="Бриши!">
+                                        <input class="btn btn-outline-danger btn-sm" 
+                                            <?php echo ($admin["id"] == $_COOKIE["adminId"])?
+                                                "disabled" : ""; ?>
+                                                type="submit" value="Бриши!">
                                     </form>
                                 </td>
                             </tr>

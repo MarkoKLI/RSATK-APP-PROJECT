@@ -72,9 +72,20 @@
                 header("Location: " . $location);
                 break;
             }
+            // Create
             case "create_admin": {
                 require_once("./controllers/create-admin.controller.php");
                 require("./views/users.php");
+                break;
+            }
+            case "create_department": {
+                require_once("./controllers/create-department.controller.php");
+                require("./views/departments.php");
+                break;
+            }
+            case "create_diagnosis": {
+                require_once("./controllers/create-diagnosis.controller.php");
+                require("./views/diagnoses.php");
                 break;
             }
             case "create_user": {
@@ -82,6 +93,7 @@
                 require("./views/users.php");
                 break;
             }
+            // Delete
             case "delete_admin": {
                 require_once("./controllers/delete-admin.controller.php");
                 require("./views/users.php");
@@ -90,6 +102,16 @@
             case "delete_user": {
                 require_once("./controllers/delete-user.controller.php");
                 require("./views/users.php");
+                break;
+            }
+            case "delete_department": {
+                require_once("./controllers/delete-department.controller.php");
+                require("./views/departments.php");
+                break;
+            }
+            case "delete_diagnosis": {
+                require_once("./controllers/delete-diagnosis.controller.php");
+                require("./views/diagnoses.php");
                 break;
             }
             case "show_login": {
@@ -106,6 +128,15 @@
             }
             case "show_diagnoses": {
                 require("./views/diagnoses.php");
+                break;
+            }
+            // Update
+            case "update_diagnosis": {
+                require_once("./controllers/update-diagnosis.controller.php");
+                require("");
+                break;
+            }
+            case "update_department": {
                 break;
             }
             default: {

@@ -1,7 +1,7 @@
 <div class="col-2 sidebar-sticky">
     <ul class="nav flex-column">
         <li class="nav-item">
-            <a class="nav-link <?php echo ($adminId) ? "active" : "disabled"; ?>" 
+            <a class="nav-link <?php echo ($adminId) ? "" : "disabled"; ?>" 
                 href="<?php echo $location . "?action=show_users"; ?>">
                 <i class="fas fa-users"></i>
                 Корисници

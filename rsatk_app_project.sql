@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jan 29, 2021 at 06:32 PM
+-- Generation Time: Jan 29, 2021 at 09:18 PM
 -- Server version: 5.7.31
 -- PHP Version: 7.4.9
 
@@ -95,7 +95,7 @@ CREATE TABLE IF NOT EXISTS `diagnoses` (
   `createdOn` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updatedOn` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `diagnoses`
@@ -183,7 +183,7 @@ CREATE TABLE IF NOT EXISTS `specialties` (
   `createdOn` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updatedOn` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `specialties`
@@ -235,8 +235,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `EMBR`, `name`, `surname`, `email`, `telNr`, `DOB`, `PasswordHash`, `passwordSalt`, `isDoctor`, `description`, `specialtyId`, `address`, `createdOn`, `updatedOn`) VALUES
-(1, '1234567891234', 'Gregory', 'House', 'house@hospital.com', '075500000', '1958-11-06', '\rÐû—´Ã´´‚òÊleóB\rd±6hºÿÒýÊÒi>ó3„-5B‰Hþ¢Ý=¬=I¾ùÁÐ•ABûz¨', '/BÍKþ°+', 1, NULL, 1, '5-19 Codeine bvd.', '2021-01-29 16:33:56', '2021-01-29 16:33:56'),
-(2, '2345678912345', 'John', 'Doe', 'doe@hospital.com', '072999888', '1983-05-09', 'Z?#Œ“„·3âdÒ$ñkÉgC¨OüÜ“úÕq‹Ð—€¾H;õlA§—Ä†ØbçbèJg¾HWW;ÄÙ5ç', '¤I&Yèö¦', 0, NULL, NULL, '2-2 Chopin str.', '2021-01-29 16:34:51', '2021-01-29 16:34:51');
+(1, '1234567891234', 'Gregory', 'House', 'house@hospital.com', '075500000', '1958-06-11', 'é‘{oË”Ün¸S¬™ö{åQâ—¬!ód	UàkÞkË.™”À¬Þ€»3ˆÍ}Œ	uºo¬!öúÚ>w', 'ÈëÍy0R–¢', 1, NULL, 2, '5-19 Codeine bvd.', '2021-01-29 21:16:25', '2021-01-29 21:16:25'),
+(2, '2345678912345', 'John', 'Doe', 'doe@hospital.com', '070555666', '1989-12-19', 'm[%O®l[D61œ>Ç<Ê».Ö}÷ÜiV•ÞâWÞœw»·Þy7t¯\'Š”P\\w)¨¥&”ƒ	p\"8“Är ùA€', '˜¬ü‹ºôÝ', 0, NULL, NULL, '2-2 Chopin str.', '2021-01-29 21:16:58', '2021-01-29 21:16:58');
 
 --
 -- Constraints for dumped tables

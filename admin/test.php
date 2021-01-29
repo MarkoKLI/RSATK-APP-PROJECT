@@ -3,6 +3,8 @@
 // Treba da se izbrise na kraj
 include("./models/db.service.php");
 include("./models/users-admin.service.php");
+include("./models/departments-admin.service.php");
+include("./models/diagnoses-admin.service.php");
 
 // $specialtyId = NULL;
 // $isDoctor = false;
@@ -13,8 +15,10 @@ include("./models/users-admin.service.php");
 // $result = UsersService::getUserPasswordByEmail("this@that.test");
 // echo !Password::validatePassword($result['passwordHash'], $result['passwordSalt'], "122345");
 
-echo "<br>";
-$arr = UsersAdminService::getAllAdmins();
+for($i=1;$i<11;$i++) {
+    DepartmentsAdminService::createDepartment("Specialty " . $i ,
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.");
+}
 
 var_dump($arr);
 
