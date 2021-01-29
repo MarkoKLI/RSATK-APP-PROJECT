@@ -35,8 +35,26 @@
 
         </ul>
       </nav><!-- .nav-menu -->
+      <div class="ShowForPatient">
+      <a href="<?php echo $location . "?action=appointments"; ?>" class="appointment-btn scrollto">Make an Appointment</a></div>
+      <div class="ShowForDoctor">
+      <a href="<?php echo $location . "?action=show_patients"; ?>" class="appointment-btn scrollto">Patients</a></div>
 
-      <a href="<?php echo $location . "?action=show_appointments"; ?>" class="appointment-btn scrollto">Make an Appointment</a>
+      <?php
+      $class='';
+    if($_COOKIE['userType']=='PATIENT') {
+      echo "<div class='ShowForPatient'>TEST</div>";
+      ?>
+      <script type="text/javascript">$('#ShowForDoctor').hide()</script>
+      <?php
+    } else if($_COOKIE['userType']=='DOCTOR') {
+      echo "<div class='ShowForDoctor'>TEST</div>";
+      ?>
+      <script type="text/javascript">$('#ShowForPatient').hide()</script>
+      <?php                                     
+    }
+
+      ?>    
 
     </div>
   </header><!-- End Header -->
