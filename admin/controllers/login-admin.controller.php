@@ -1,7 +1,4 @@
-<?php 
-    require("./models/users-admin.service.php");
-    require("../controllers/classes/password.class.php");
-
+<?php
     $requestFailed = false;
     $invalidCredentials = false;
 

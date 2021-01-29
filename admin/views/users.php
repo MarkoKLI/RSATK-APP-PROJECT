@@ -16,46 +16,28 @@
                     <tr>
                         <th>id</th>
                         <th>Име и презиме</th>
+                        <th>ЕМБР</th>
                         <th>Тип на корисник</th>
                         <th>Избриши</th>
                     </tr>
                 </thead>
                 <tbody id="table-users">
+                    <?php foreach ($_SESSION["users"] as $user): ?>
                     <tr>
-                        <td>1</td>
-                        <td>Thirteen</td>
-                        <td>Doctor</td>
+                        <td><?php echo $user["id"]; ?></td>
+                        <td><?php echo $user["name"] . " " . $user["surname"]; ?></td>
+                        <td><?php echo $user["embr"]; ?></td>
+                        <td><?php echo ($user["isDoctor"])? "ДОКТОР" : "ПАЦИЕНТ"; ?></td>
                         <td>
                             <form action="<?php echo $location; ?>" method="post">
                                 <input type="hidden" name="action" value="delete_user">
-                                <input type="hidden" name="userId" value="1">
+                                <input type="hidden" name="userId" 
+                                        value="<?php echo $user["id"]; ?>">
                                 <input class="btn btn-outline-danger btn-sm" type="submit" value="Бриши!">
                             </form>
                         </td>
                     </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Lisa Cuddy</td>
-                        <td>Patient</td>
-                        <td><form action="<?php echo $location; ?>" method="post">
-                                <input type="hidden" name="action" value="delete_user">
-                                <input type="hidden" name="userId" value="1">
-                                <input class="btn btn-outline-danger btn-sm" type="submit" value="Бриши!">
-                            </form>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Gregory House</td>
-                        <td>Doctor</td>
-                        <td>
-                            <form action="<?php echo $location; ?>" method="post">
-                                <input type="hidden" name="action" value="delete_user">
-                                <input type="hidden" name="userId" value="1">
-                                <input class="btn btn-outline-danger btn-sm" type="submit" value="Бриши!">
-                            </form>
-                        </td>
-                    </tr>
+                    <?php endforeach; ?>
                 </tbody>
             </table>
         </div>
@@ -160,11 +142,11 @@
                         <label for="dob" class="col-4 col-form-label">Одделение: </label>
                         <div class="col-8">
                             <select class="form-control" name="specialty" id="specialty">
-                                <option <?php echo ($isDoctor) ? "" : "selected"; ?> disabled></option>
-                                <option value="1" <?php echo ( $specialtyId == 1 ) ? "" : "selected"; ?>>sad</option>
-                                <option value="2" <?php echo ( $specialtyId == 2 ) ? "" : "selected"; ?>>bad</option>
-                                <option value="3" <?php echo ( $specialtyId == 3 ) ? "" : "selected"; ?>>mad</option>
-                                <option value="4" <?php echo ( $specialtyId == 4 ) ? "" : "selected"; ?>>rad</option>
+                                <option value=""></option>
+                                <option value="1" <?php echo ($specialtyId==1)? "selected": ""; ?>>sad</option>
+                                <option value="2" <?php echo ($specialtyId==1)? "selected": ""; ?>>bad</option>
+                                <option value="3" <?php echo ($specialtyId==1)? "selected": ""; ?>>mad</option>
+                                <option value="4" <?php echo ($specialtyId==1)? "selected": ""; ?>>rad</option>
                             </select>
                             <div class="invalid-feedback">
                                 <?php echo "Please select doctor's specialty (department)!"; ?>
