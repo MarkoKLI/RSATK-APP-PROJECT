@@ -1,3 +1,20 @@
+<script>
+    function prepareUpdate(id) {
+        var desc = $("#desc" + id).text();
+        var name = $("#name" + id).text();
+
+        $("#desc").val(desc.trim());
+        $("#name").val(name.trim());
+        $("#action").val("update_diagnosis");
+        $("#id").val(id);
+        $("#submit").val("Промени");
+    }
+
+    function resetUpdate() {
+        $("#action").val("create_diagnosis");
+        $("#submit").val("Креирај");
+    }
+</script>
 <div class="card container-card list-card">
     <div class="card-header">
         <h2>Дијагнози</h2>
@@ -8,20 +25,17 @@
             <div class="card-header" id="title<?php echo $diagnosis["id"]; ?>">
                 <div class="row justify-content-between">
                     <button class="btn collapsed col-lg-9 ml-2" 
+                            id="name<?php echo $diagnosis["id"]; ?>"
                             data-toggle="collapse" 
                             data-target="#desc<?php echo $diagnosis["id"]; ?>" 
                             aria-expanded="false"
-                            data-toggle="collapse"
                             aria-controls="desc<?php echo $diagnosis["id"]; ?>">
                         <?php echo $diagnosis["name"]; ?>
                     </button>
                     <div class="row col-lg-3">
-                        <form action="<?php echo $location; ?>" method="post" class="mr-4">
-                            <input type="hidden" name="action" value="edit_diagnosis">
-                            <input type="hidden" name="id" value="<?php echo $diagnosis["id"]; ?>">
-                            <input class="btn btn-outline-primary" type="submit" value="Промени">
-                        </form>
-                        <form action="<?php echo $location; ?>" method="post">
+                        <button class="btn btn-outline-primary"
+                            onclick="prepareUpdate(<?php echo $diagnosis['id']; ?>)">Промени</button>
+                        <form class="ml-3" action="<?php echo $location; ?>" method="post">
                         <input type="hidden" name="id" value="<?php echo $diagnosis["id"]; ?>">
                             <input type="hidden" name="action" value="delete_diagnosis">
                             <input class="btn btn-outline-danger" type="submit" value="Избриши">
@@ -46,7 +60,8 @@
     </div>
     <div class="card-body">
         <form class="needs-validation" action="<?php echo $location; ?>" method="post" novalidate>
-            <input type="hidden" name="action" value="create_diagnosis">
+            <input type="hidden" name="action" id="action" value="create_diagnosis">
+            <input type="hidden" name="id" id="id">
             <div class="form-group row">
                 <label for="title" class="col-2 col-form-label text-center">Име на дијагноза: </label>
                 <div class="col-10">
@@ -72,7 +87,8 @@
                     </div>
                 </div>
             </div>
-            <input class="btn btn-outline-primary" type="submit" value="Креирај!">
+            <input class="btn btn-outline-primary ml-2" id="submit" type="submit" value="Креирај">
+            <input class="btn btn-outline-secondary ml-3" type="reset" onclick="resetUpdate()" value="Откажи">
         </form>
     </div>
 </div>

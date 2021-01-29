@@ -133,10 +133,12 @@
             // Update
             case "update_diagnosis": {
                 require_once("./controllers/update-diagnosis.controller.php");
-                require("");
+                require("./views/diagnoses.php");
                 break;
             }
             case "update_department": {
+                require_once("./controllers/update-department.controller.php");
+                require("./views/departments.php");
                 break;
             }
             default: {
