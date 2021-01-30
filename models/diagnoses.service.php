@@ -97,22 +97,5 @@
             return $result->fetch_all(MYSQLI_ASSOC);
         }
 
-        public static function setReportDiagnosesMade (array $diagnoses,int $reportId) {
-            // Diagnoses should be array of associative arrays with at least
-            // diagnosisId. Active can be NULL
-            self::Connect();
-
-            foreach ($diagnoses as $diagnosis) {
-                $query = "  INSERT INTO diagnosesMade (active, reportId, diagnosisId)
-                            VALUES (?, ?, ?)";
-                $statement = self::$connection->prepare($query);
-                $statement->bind_param("iii", 
-                                        intval($diagnosis["active"]),
-                                        $reportId, 
-                                        $diagnosis["id"]);
-                $statement->execute();
-            }
-        }
-
     }
 ?>
