@@ -27,7 +27,7 @@
 <body>
     <div class="container-fluid">
         <div class="navbar navbar-light">
-            <h1>РСАТК Проект - Администрација</h1>
+            <h2 class="m-3">РСАТК Проект - Администрација</h2>
         </div>
     </div>
     <div class="container-fluid">
