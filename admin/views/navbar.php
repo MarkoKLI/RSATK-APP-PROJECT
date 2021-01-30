@@ -29,7 +29,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" 
+            <a class="nav-link" id="exit"
                 href="./../">
                 <i class="fas fa-door-open"></i>
                 Back to main site
@@ -37,3 +37,12 @@
         </li>
     </ul>
 </div>
+<script>
+    $(document).ready(() => {
+        $("#exit").click(() => {
+            if (Cookies.get("adminId", {path: "/RSATK-APP-PROJECT/admin"})) {
+                Cookies.remove("adminId", {path:"/RSATK-APP-PROJECT/admin"});
+            }
+        });
+    })
+</script>

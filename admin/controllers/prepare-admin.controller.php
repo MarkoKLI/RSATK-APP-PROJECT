@@ -3,7 +3,7 @@
     require_once("./models/users-admin.service.php");
     require_once("./models/diagnoses-admin.service.php");
     require_once("./models/departments-admin.service.php");
-    require_once("../controllers/classes/password.class.php");
+    require_once("./controllers/classes/password.class.php");
 
     if(!isset($_SESSION["admins"])) {
         $_SESSION["admins"] = UsersAdminService::getAllAdmins();
