@@ -5,13 +5,13 @@
 
         $("#desc").val(desc.trim());
         $("#title").val(title.trim());
-        $("#action").val("update_diagnosis");
+        $("#action").val("update_department");
         $("#id").val(id);
         $("#submit").val("Промени");
     }
 
     function resetUpdate() {
-        $("#action").val("create_diagnosis");
+        $("#action").val("create_department");
         $("#submit").val("Креирај");
     }
 </script>
