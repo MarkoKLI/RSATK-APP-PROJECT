@@ -1,6 +1,4 @@
 <?php 
-    require("./db.service.php");
-
     class AppointmentsService extends DBService {
 
         public static function getPatientAppointments(int $patientId) {

@@ -31,7 +31,7 @@
 <body>
     <h3> РСАТК ПРОЕКТ АПЛИКАЦИЈА </h3>
     <?php
-        require("controllers/services/conversion.service.php");
+        require_once("./controllers/prepare-main.controller.php");
 
         if ( isset($_POST["action"]) ) {
             $action = ConversionService::SecureInput($_POST["action"]);

@@ -1,6 +1,4 @@
 <?php 
-    require("./models/db.service.php");
-    
     class UsersService extends DBService {
 
         public static function getAllPatients() {

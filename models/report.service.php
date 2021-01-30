@@ -1,6 +1,4 @@
-<?php 
-    require("./db.service.php");
-
+<?php
     class ReportService extends DBService {
 
         public static function getPatientReports(int $patientId) {
