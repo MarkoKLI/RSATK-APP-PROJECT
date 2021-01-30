@@ -1,5 +1,7 @@
 <?php 
     session_start();
+    // UNCOMMENT WHEN EVERYONE INSTALLS SSL CERT
+    // require_once("./controllers/secure-connection.controller.php");
 ?>
 
 <!DOCTYPE html>
