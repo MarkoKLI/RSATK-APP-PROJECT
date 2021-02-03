@@ -3,6 +3,8 @@
 // Treba da se izbrise na kraj
 include("./models/db.service.php");
 include("./models/users-admin.service.php");
+include("./models/departments-admin.service.php");
+include("./models/diagnoses-admin.service.php");
 
 // $specialtyId = NULL;
 // $isDoctor = false;
@@ -13,10 +15,10 @@ include("./models/users-admin.service.php");
 // $result = UsersService::getUserPasswordByEmail("this@that.test");
 // echo !Password::validatePassword($result['passwordHash'], $result['passwordSalt'], "122345");
 
+echo filter_input(INPUT_SERVER,"HTTP_HOST");
 echo "<br>";
-$arr = UsersAdminService::getAllAdmins();
+echo filter_input(INPUT_SERVER,"REQUEST_URI");
 
-var_dump($arr);
 
 //var_dump(UsersAdminService::getAdminPasswordDetailsByUsername("admin"));
 

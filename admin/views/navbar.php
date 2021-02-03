@@ -1,7 +1,7 @@
 <div class="col-2 sidebar-sticky">
     <ul class="nav flex-column">
         <li class="nav-item">
-            <a class="nav-link <?php echo ($adminId) ? "active" : "disabled"; ?>" 
+            <a class="nav-link <?php echo ($adminId) ? "" : "disabled"; ?>" 
                 href="<?php echo $location . "?action=show_users"; ?>">
                 <i class="fas fa-users"></i>
                 Корисници
@@ -29,7 +29,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" 
+            <a class="nav-link" id="exit"
                 href="./../">
                 <i class="fas fa-door-open"></i>
                 Back to main site
@@ -37,3 +37,12 @@
         </li>
     </ul>
 </div>
+<script>
+    $(document).ready(() => {
+        $("#exit").click(() => {
+            if (Cookies.get("adminId", {path: "/RSATK-APP-PROJECT/admin"})) {
+                Cookies.remove("adminId", {path:"/RSATK-APP-PROJECT/admin"});
+            }
+        });
+    })
+</script>

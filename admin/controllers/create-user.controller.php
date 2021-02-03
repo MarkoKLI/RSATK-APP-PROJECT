@@ -1,7 +1,4 @@
 <?php
-    require_once("./models/users-admin.service.php");
-    require("../controllers/classes/password.class.php");
-
     unset($userRequestFailed);
     unset($userExists);
     if (!isset($_POST["name"]) || !isset($_POST["surname"]) || !isset($_POST["embr"]) ||

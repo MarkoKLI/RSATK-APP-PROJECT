@@ -1,5 +1,7 @@
 <?php 
     session_start();
+    // UNCOMMENT WHEN EVERYONE INSTALLS SSL CERT
+    // require_once("./controllers/secure-connection.controller.php");
 ?>
 
 <!DOCTYPE html>
@@ -11,6 +13,8 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- JQuery cookie module CDN source -->
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
     <!-- Font Awesome CSS CDN source-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     
@@ -23,13 +27,13 @@
 <body>
     <div class="container-fluid">
         <div class="navbar navbar-light">
-            <h1>РСАТК Проект - Администрација</h1>
+            <h2 class="m-3">РСАТК Проект - Администрација</h2>
         </div>
     </div>
     <div class="container-fluid">
         <div class="row">
     <?php
-        require_once("../controllers/services/conversion.service.php");
+        require_once("./controllers/services/conversion.service.php");
         
         $adminId = filter_input(INPUT_COOKIE,"adminId",FILTER_VALIDATE_INT);
         if ($adminId) {
@@ -72,9 +76,20 @@
                 header("Location: " . $location);
                 break;
             }
+            // Create
             case "create_admin": {
                 require_once("./controllers/create-admin.controller.php");
                 require("./views/users.php");
+                break;
+            }
+            case "create_department": {
+                require_once("./controllers/create-department.controller.php");
+                require("./views/departments.php");
+                break;
+            }
+            case "create_diagnosis": {
+                require_once("./controllers/create-diagnosis.controller.php");
+                require("./views/diagnoses.php");
                 break;
             }
             case "create_user": {
@@ -82,6 +97,7 @@
                 require("./views/users.php");
                 break;
             }
+            // Delete
             case "delete_admin": {
                 require_once("./controllers/delete-admin.controller.php");
                 require("./views/users.php");
@@ -90,6 +106,16 @@
             case "delete_user": {
                 require_once("./controllers/delete-user.controller.php");
                 require("./views/users.php");
+                break;
+            }
+            case "delete_department": {
+                require_once("./controllers/delete-department.controller.php");
+                require("./views/departments.php");
+                break;
+            }
+            case "delete_diagnosis": {
+                require_once("./controllers/delete-diagnosis.controller.php");
+                require("./views/diagnoses.php");
                 break;
             }
             case "show_login": {
@@ -106,6 +132,17 @@
             }
             case "show_diagnoses": {
                 require("./views/diagnoses.php");
+                break;
+            }
+            // Update
+            case "update_diagnosis": {
+                require_once("./controllers/update-diagnosis.controller.php");
+                require("./views/diagnoses.php");
+                break;
+            }
+            case "update_department": {
+                require_once("./controllers/update-department.controller.php");
+                require("./views/departments.php");
                 break;
             }
             default: {

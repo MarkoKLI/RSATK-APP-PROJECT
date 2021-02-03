@@ -114,7 +114,7 @@
         public static function getAllUsers() {
             self::Connect();
 
-            $query = "  SELECT id, name, surname, isDoctor
+            $query = "  SELECT id, name, surname, embr, isDoctor
                         FROM users";
 
             $statement = self::$connection->prepare($query);
