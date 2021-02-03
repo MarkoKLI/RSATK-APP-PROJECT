@@ -66,6 +66,18 @@
                 require("views/home.php");
                 break;
             } 
+            case "show_profile": {
+                require("views/profile.php");
+                break;
+            }
+            case "show_appointments": {
+                require("views/appointments.php");
+                break;
+            }
+            case "show_patients": {
+                require("views/patients.php");
+                break;
+            }
             default: {
                 require("views/error404.php");
                 break;
