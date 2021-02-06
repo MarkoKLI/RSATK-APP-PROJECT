@@ -33,6 +33,9 @@
         </div>
   </div>
         <div class="col-md-3 text-center"> <!-- Phone & Social -->
+        <div class="button">
+            <a href="<?php echo $location . "?action=show_report"; ?>" class="btn btn-outline-success btn-sm">View Report</a>
+          </div>
           <span class="number" style="font-size:18px">Phone:<strong>+8801732226402</strong></span>
           <div class="button" style="padding-top:18px">
             <a href="mailto:ahmkctg@yahoo.com" class="btn btn-outline-success btn-block">Send Email</a>

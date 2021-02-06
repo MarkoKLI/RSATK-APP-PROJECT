@@ -18,6 +18,10 @@
                     <div class="col-xs-12">
                         <h3>Medical diagnosis<br>
             </h3>
+            <div class="Doctoredit">
+          <div class="button" style="float:right;">
+            <a href="#" class="btn btn-outline-success btn-sm">Edit Report</a>
+          </div>
                     </div>
                 </div>
             </div>
@@ -46,7 +50,7 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <h3>Neme of doagnose</h3>
+                    <h3>Name of diagnose</h3>
                 </div>									
             </div>
              <div class="row">
@@ -76,3 +80,13 @@
 <input type="submit">
 </form>
 </div>
+
+<?php
+      
+    if($_COOKIE['userType']=='PATIENT') {
+      ?>
+      <script type="text/javascript">$('.Doctoredit').hide()</script>
+      <?php
+    } 
+
+      ?>  

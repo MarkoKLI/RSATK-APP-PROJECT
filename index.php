@@ -82,6 +82,10 @@
                 require("views/patients.php");
                 break;
             }
+            case "show_report": {
+                require("views/report.php");
+                break;
+            }
             default: {
                 require("views/error404.php");
                 break;
