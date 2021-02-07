@@ -2,9 +2,10 @@
 <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
     <div class="container d-flex">
       <div class="contact-info mr-auto">
-        <i class="icofont-envelope"></i> <a href="mailto:contact@example.com">contact@example.com</a>
-        <i class="icofont-phone"></i> +1 5589 55488 55
-        <i class="icofont-google-map"></i> A108 Adam Street, NY
+        <i class="icofont-envelope"></i> <a href="mailto:contact@example.com">princeton.plainsboro@hospital.com</a>
+        <i class="icofont-phone"></i> +1 5589 55488 55s
+        <i class="icofont-google-map"></i> 400 West Blackwell Street
+Dover, NJ 07801
       </div>
       <div class="social-links">
         <a href="#" class="twitter"><i class="icofont-twitter"></i></a>
@@ -20,7 +21,7 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo mr-auto"><a href="index.php">Medilab</a></h1>
+      <h1 class="logo mr-auto"><a href="index.php">Princeton Health</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
