@@ -68,7 +68,7 @@
           <div class="col-lg-3 col-md-6">
             <div class="count-box">
               <i class="icofont-doctor-alt"></i>
-              <span data-toggle="counter-up">85</span>
+              <span data-toggle="counter-up">16</span>
               <p>Doctors</p>
             </div>
           </div>
@@ -76,7 +76,7 @@
           <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
             <div class="count-box">
               <i class="icofont-patient-bed"></i>
-              <span data-toggle="counter-up">18</span>
+              <span data-toggle="counter-up">7</span>
               <p>Departments</p>
             </div>
           </div>
@@ -145,8 +145,8 @@
                 <div class="row">
                   <div class="col-lg-8 details order-2 order-lg-1">
                     <h3>Cardiology</h3>
-                    <p class="font-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p>
-                    <p>Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint. Laborum eos ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui. Est repellat minima eveniet eius et quis magni nihil. Consequatur dolorem quaerat quos qui similique accusamus nostrum rem vero</p>
+                    <p class="font-italic">Cardiology is the medical speciality dealing with the diagnosis and treatment of diseases and disorders of the heart</p>
+                    <p>Cardiologists are specialists in diseases of the heart. The biggest area of heart disease treated is coronary artery disease e.g. angina. Also treated are abnormal heart rhythms, heart failure, high blood pressure and some rarer conditions.</p>
                     <section id="doctors" class="doctors">
       <div class="container">
 
@@ -157,9 +157,10 @@
             <div class="member d-flex align-items-start">
               <div class="pic"><img src="assets/img/doctors/doctors-1.jpg" class="img-fluid" alt=""></div>
               <div class="member-info">
-                <h4>Walter White</h4>
-                <span>Chief Medical Officer</span>
-                <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
+                <h4>Neeta Tripathi</h4>
+                <span>SPECIALTIES
+Cardiovascular Disease</span>
+                <p>YEAR BEGAN PRACTICING: 2005 (16 years)</p>
               </div>
             </div>
           </div>
@@ -168,9 +169,11 @@
             <div class="member d-flex align-items-start">
               <div class="pic"><img src="assets/img/doctors/doctors-2.jpg" class="img-fluid" alt=""></div>
               <div class="member-info">
-                <h4>Sarah Jhonson</h4>
-                <span>Anesthesiologist</span>
-                <p>Aut maiores voluptates amet et quis praesentium qui senda para</p>
+                <h4>John Caplan</h4>
+                <span>SPECIALTIES
+Cardiovascular Disease
+Clinical Cardiac Electrophysiology</span>
+                <p>YEAR BEGAN PRACTICING: 1996 (25 years)</p>
               </div>
             </div>
           </div>
@@ -190,9 +193,9 @@
               <div class="tab-pane" id="tab-2">
                 <div class="row">
                   <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Et blanditiis nemo veritatis excepturi</h3>
-                    <p class="font-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p>
-                    <p>Ea ipsum voluptatem consequatur quis est. Illum error ullam omnis quia et reiciendis sunt sunt est. Non aliquid repellendus itaque accusamus eius et velit ipsa voluptates. Optio nesciunt eaque beatae accusamus lerode pakto madirna desera vafle de nideran pal</p>
+                    <h3>Neurology</h3>
+                    <p class="font-italic">Neurology is the branch of medicine concerned with the study and treatment of disorders of the nervous system.</p>
+                    <p>Our health and safety of our patients, families and staff is our top priority. We are taking a comprehensive approach to prevent the spread of infectious disease. The Hospital and the Department of Neurology has implemented new measures to provide the safest possible environment.</p>
                     <section id="doctors" class="doctors">
       <div class="container">
 
@@ -203,9 +206,9 @@
             <div class="member d-flex align-items-start">
               <div class="pic"><img src="assets/img/doctors/doctors-1.jpg" class="img-fluid" alt=""></div>
               <div class="member-info">
-                <h4>John Bailey</h4>
-                <span>Neurosurgeon</span>
-                <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
+                <h4>Rajesh C. Sachdeo</h4>
+                <span>SPECIALTIES Neurology</span>
+                <p>YEAR BEGAN PRACTICING: 1980 (41 years)</p>
               </div>
             </div>
           </div>
@@ -214,9 +217,9 @@
             <div class="member d-flex align-items-start">
               <div class="pic"><img src="assets/img/doctors/doctors-2.jpg" class="img-fluid" alt=""></div>
               <div class="member-info">
-                <h4>Mary Pitterson</h4>
-                <span>Neurologist</span>
-                <p>Aut maiores voluptates amet et quis praesentium qui senda para</p>
+                <h4>Paul K. Kaiser</h4>
+                <span>SPECIALTIESClinical Neurophysiology, Neurology, Vascular Neurology </span>
+                <p>YEAR BEGAN PRACTICING: 1993 (28 years)</p>
               </div>
             </div>
           </div>
@@ -235,9 +238,9 @@
               <div class="tab-pane" id="tab-3">
                 <div class="row">
                   <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Impedit facilis occaecati odio neque aperiam sit</h3>
-                    <p class="font-italic">Eos voluptatibus quo. Odio similique illum id quidem non enim fuga. Qui natus non sunt dicta dolor et. In asperiores velit quaerat perferendis aut</p>
-                    <p>Iure officiis odit rerum. Harum sequi eum illum corrupti culpa veritatis quisquam. Neque necessitatibus illo rerum eum ut. Commodi ipsam minima molestiae sed laboriosam a iste odio. Earum odit nesciunt fugiat sit ullam. Soluta et harum voluptatem optio quae</p>
+                    <h3>Hepatology</h3>
+                    <p class="font-italic">Hepatology is a branch of medicine concerned with the study, prevention, diagnosis and management of diseases that affect the liver, gallbladder, biliary tree and pancreas.</p>
+                    <p>Hepatologists offer treatment and evaluation for patients presenting with different liver diseases. There are specialty clinics for the management of hepatitis C, hepatitis B, fatty liver, liver cancer, cirrhosis and liver transplant. The UF liver team is multidisciplinary, with colleagues in surgery, oncology, radiology and other internal medicine specialties working together to provide patients with personalized care. The team performs leading-edge scientific research to improve prevention, detection, treatment, and outcomes of patients with liver disease and its complications.</p>
                     <section id="doctors" class="doctors">
       <div class="container">
 
@@ -254,6 +257,16 @@
               </div>
             </div>
           </div>
+          <div class="col-lg-6 mt-4 mt-lg-0">
+            <div class="member d-flex align-items-start">
+              <div class="pic"><img src="assets/img/doctors/doctors-2.jpg" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Harry Morrison</h4>
+                <span>Pediatrician</span>
+                <p>Aut maiores voluptates amet et quis praesentium qui senda para</p>
+              </div>
+            </div>
+          </div>
         </div>
 
       </div>
@@ -267,9 +280,9 @@
               <div class="tab-pane" id="tab-4">
                 <div class="row">
                   <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Fuga dolores inventore laboriosam ut est accusamus laboriosam dolore</h3>
-                    <p class="font-italic">Totam aperiam accusamus. Repellat consequuntur iure voluptas iure porro quis delectus</p>
-                    <p>Eaque consequuntur consequuntur libero expedita in voluptas. Nostrum ipsam necessitatibus aliquam fugiat debitis quis velit. Eum ex maxime error in consequatur corporis atque. Eligendi asperiores sed qui veritatis aperiam quia a laborum inventore</p>
+                    <h3>Pediatrics</h3>
+                    <p class="font-italic">Pediatrics is the branch of medicine that involves the medical care of infants, children, and adolescents.</p>
+                    <p>Pediatric hospitalists are pediatricians who work primarily in hospitals. They care for children in many hospital areas, including the pediatric ward, labor and delivery, the newborn nursery, the emergency department, the neonatal intensive care unit, and the pediatric intensive care unit. </p>
                     <section id="doctors" class="doctors">
       <div class="container">
 
@@ -321,9 +334,9 @@
               <div class="tab-pane" id="tab-5">
                 <div class="row">
                   <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Est eveniet ipsam sindera pad rone matrelat sando reda</h3>
-                    <p class="font-italic">Omnis blanditiis saepe eos autem qui sunt debitis porro quia.</p>
-                    <p>Exercitationem nostrum omnis. Ut reiciendis repudiandae minus. Omnis recusandae ut non quam ut quod eius qui. Ipsum quia odit vero atque qui quibusdam amet. Occaecati sed est sint aut vitae molestiae voluptate vel</p>
+                    <h3>Ophthalmology</h3>
+                    <p class="font-italic">Ophthalmology is a branch of medicine and surgery which deals with the diagnosis and treatment of eye disorders.</p>
+                    <p>The Department of Ophthalmology at Princeton Hospitals aims to set benchmarks in all aspects of ophthalmic care delivery to the patients and the public. Guidance is provided for all types of eye disorders and the services are reviewed regularly to keep them aligned with changing demands and technology.</p>
                     <section id="doctors" class="doctors">
       <div class="container">
 
