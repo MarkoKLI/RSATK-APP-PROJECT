@@ -14,4 +14,5 @@
     require_once("./admin/models/diagnoses-admin.service.php");
     require_once("./admin/models/departments-admin.service.php");
 
+  #  primer:  $departments = DepartmentsAdminService::getAllDepartments();
 ?>

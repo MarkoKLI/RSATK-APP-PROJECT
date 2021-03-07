@@ -22,37 +22,37 @@
     </div>
     <div id="accordion" class="card-body">
         <?php foreach ($_SESSION["specialties"] as $department): ?>
-        <div class="card">
-            <div class="card-header" id="title<?php echo $department["id"]; ?>">
-                <div class="row justify-content-between">
-                    <button class="btn collapsed col-lg-9 ml-2" 
-                            id="name<?php echo $department["id"]; ?>"
-                            data-toggle="collapse" 
-                            data-target="#desc<?php echo $department["id"]; ?>" 
-                            aria-expanded="false"
-                            aria-controls="desc<?php echo $department["id"]; ?>">
-                        <?php echo $department["title"]; ?>
-                    </button>
-                    <div class="row col-lg-3">
-                    <button class="btn btn-outline-primary mr-3"
-                            onclick="prepareUpdate(<?php echo $department['id']; ?>)">Промени</button>
-                        <form action="<?php echo $location; ?>" method="post">
-                            <input type="hidden" name="id" value="<?php echo $department["id"]; ?>">
-                            <input type="hidden" name="action" value="delete_department">
-                            <input class="btn btn-outline-danger" type="submit"
-                                    value="Избриши">
-                        </form>
+            <div class="card">
+                <div class="card-header" id="title<?php echo $department["id"]; ?>">
+                    <div class="row justify-content-between">
+                        <button class="btn collapsed col-lg-9 ml-2" 
+                                id="name<?php echo $department["id"]; ?>"
+                                data-toggle="collapse" 
+                                data-target="#desc<?php echo $department["id"]; ?>" 
+                                aria-expanded="false"
+                                aria-controls="desc<?php echo $department["id"]; ?>">
+                            <?php echo $department["title"]; ?>
+                        </button>
+                        <div class="row col-lg-3">
+                        <button class="btn btn-outline-primary mr-3"
+                                onclick="prepareUpdate(<?php echo $department['id']; ?>)">Промени</button>
+                            <form action="<?php echo $location; ?>" method="post">
+                                <input type="hidden" name="id" value="<?php echo $department["id"]; ?>">
+                                <input type="hidden" name="action" value="delete_department">
+                                <input class="btn btn-outline-danger" type="submit"
+                                        value="Избриши">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div id="desc<?php echo $department["id"]; ?>"  
+                    aria-labelledby="title<?php echo $department["id"]; ?>"
+                    data-parent="#accordion" class="collapse">
+                    <div class="card-body">
+                        <?php echo $department["description"]; ?>
                     </div>
                 </div>
             </div>
-            <div id="desc<?php echo $department["id"]; ?>"  
-                aria-labelledby="title<?php echo $department["id"]; ?>"
-                data-parent="#accordion" class="collapse">
-                <div class="card-body">
-                    <?php echo $department["description"]; ?>
-                </div>
-            </div>
-        </div>
         <?php endforeach; ?>
     </div>
 </div>
@@ -91,7 +91,7 @@
                 </div>
             </div>
             <div class="col-3 justify-content-center">
-                <input class="btn btn-outline-primary" type="submit" value="Креирај!">
+                <input class="btn btn-outline-primary" id="submit" type="submit" value="Креирај!">
                 <input class="btn btn-outline-secondary ml-3" type="reset" onclick="resetUpdate()" value="Откажи">
             </div>
         </form>

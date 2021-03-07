@@ -116,9 +116,11 @@
         <div class="row">
           <div class="col-lg-3">
             <ul class="nav nav-tabs flex-column">
+
               <li class="nav-item">
-                <a class="nav-link active show" data-toggle="tab" href="#tab-1">Cardiology</a>
+                <a class="nav-link active show" data-toggle="tab" href="#tab-<?php echo $departments[1]["id"]; ?>"><?php echo $departments[1]["name"]; ?></a>
               </li>
+            
               <li class="nav-item">
                 <a class="nav-link" data-toggle="tab" href="#tab-2">Neurology</a>
               </li>
@@ -144,47 +146,47 @@
               <div class="tab-pane active show" id="tab-1">
                 <div class="row">
                   <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Cardiology</h3>
-                    <p class="font-italic">Cardiology is the medical speciality dealing with the diagnosis and treatment of diseases and disorders of the heart</p>
-                    <p>Cardiologists are specialists in diseases of the heart. The biggest area of heart disease treated is coronary artery disease e.g. angina. Also treated are abnormal heart rhythms, heart failure, high blood pressure and some rarer conditions.</p>
+                    <h3>
+                      Cardiology
+                    </h3>
+                    <p class="font-italic">Description from DB goes here</p>
+
                     <section id="doctors" class="doctors">
-      <div class="container">
-
-      
-        <div class="row">
-
-          <div class="col-lg-6">
-            <div class="member d-flex align-items-start">
-              <div class="pic"><img src="assets/img/doctors/doctors-1.jpg" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Neeta Tripathi</h4>
-                <span>SPECIALTIES
-Cardiovascular Disease</span>
-                <p>YEAR BEGAN PRACTICING: 2005 (16 years)</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6 mt-4 mt-lg-0">
-            <div class="member d-flex align-items-start">
-              <div class="pic"><img src="assets/img/doctors/doctors-2.jpg" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>John Caplan</h4>
-                <span>SPECIALTIES
-Cardiovascular Disease
-Clinical Cardiac Electrophysiology</span>
-                <p>YEAR BEGAN PRACTICING: 1996 (25 years)</p>
-              </div>
-            </div>
-          </div>
+                      <!-- Proveruvea koi od selektiranite dokotori se od praviot departnment - gi stava vo lista -->
+                      <div class="container">
 
 
-        </div>
+<!-- start-foreach -->
+                        <div class="row">
+                          <div class="col-lg-6">
+                            <div class="member d-flex align-items-start">
+                              <div class="pic"> <img src="assets/img/doctors/doctors-1.jpg" class="img-fluid" alt=""> </div>
+                              <div class="member-info">
+                                <h4>Neeta Tripathi</h4>
+                                <span>SPECIALTIES Cardiovascular Disease</span>
+                                <p>YEAR BEGAN PRACTICING: 2005 (16 years)</p>
+                              </div>
+                            </div>
+                          </div>
+<!-- end-foreach -->
 
-      </div>
-    </section>
-                
-                </div>
+
+                          <div class="col-lg-6 mt-4 mt-lg-0">
+                            <div class="member d-flex align-items-start">
+                              <div class="pic"><img src="assets/img/doctors/doctors-2.jpg" class="img-fluid" alt=""></div>
+                              <div class="member-info">
+                                <h4>John Caplan</h4>
+                                <span>SPECIALTIES Cardiovascular Disease Clinical Cardiac Electrophysiology</span>
+                                <p>YEAR BEGAN PRACTICING: 1996 (25 years)</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </section>
+
+                  </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
                     <img src="assets/img/departments-1.jpg" alt="" class="img-fluid">
                   </div>
