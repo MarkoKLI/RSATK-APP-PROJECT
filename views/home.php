@@ -118,26 +118,23 @@
             <ul class="nav nav-tabs flex-column">
 
               <li class="nav-item">
-                <a class="nav-link active show" data-toggle="tab" href="#tab-<?php echo $departments[1]["id"]; ?>"><?php echo $departments[1]["name"]; ?></a>
+                <a class="nav-link active show" data-toggle="tab" href="#tab-<?php echo $departments[0]["id"]; ?>"><?php echo $departments[0]["title"]; ?></a>
               </li>
             
               <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#tab-2">Neurology</a>
+                <a class="nav-link" data-toggle="tab" href="#tab-<?php echo $departments[1]["id"]; ?>"><?php echo $departments[1]["title"]; ?></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#tab-3">Hepatology</a>
+                <a class="nav-link" data-toggle="tab" href="#tab-<?php echo $departments[2]["id"]; ?>"><?php echo $departments[2]["title"]; ?></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#tab-4">Pediatrics</a>
+                <a class="nav-link" data-toggle="tab" href="#tab-<?php echo $departments[3]["id"]; ?>"><?php echo $departments[3]["title"]; ?></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#tab-5">Eye Care</a>
+                <a class="nav-link" data-toggle="tab" href="#tab-<?php echo $departments[4]["id"]; ?>"><?php echo $departments[4]["title"]; ?></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#tab-5">Oncology</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#tab-5">Nephrology</a>
+                <a class="nav-link" data-toggle="tab" href="#tab-<?php echo $departments[5]["id"]; ?>"><?php echo $departments[5]["title"]; ?></a>
               </li>
             </ul>
           </div>
@@ -149,7 +146,7 @@
                     <h3>
                       Cardiology
                     </h3>
-                    <p class="font-italic">Description from DB goes here</p>
+                    <p class="font-italic"><?php echo $departments[0]["description"]; ?></p>
 
                     <section id="doctors" class="doctors">
                       <!-- Proveruvea koi od selektiranite dokotori se od praviot departnment - gi stava vo lista -->
@@ -157,21 +154,35 @@
 
 
 <!-- start-foreach -->
-                        <div class="row">
-                          <div class="col-lg-6">
-                            <div class="member d-flex align-items-start">
-                              <div class="pic"> <img src="assets/img/doctors/doctors-1.jpg" class="img-fluid" alt=""> </div>
-                              <div class="member-info">
-                                <h4>Neeta Tripathi</h4>
-                                <span>SPECIALTIES Cardiovascular Disease</span>
-                                <p>YEAR BEGAN PRACTICING: 2005 (16 years)</p>
-                              </div>
-                            </div>
-                          </div>
-<!-- end-foreach -->
+                
+
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="member d-flex align-items-start">
+                        <div class="pic"> <img src="assets/img/doctors/doctors-1.jpg" class="img-fluid" alt=""> </div>
+                        <div class="member-info">
+                          <h4 id ="doctorName"></h4>
+                          <span>SPECIALTIES <?php echo $departments[0]["title"]; ?></span>
+                          <p>YEAR BEGAN PRACTICING: 2005 (16 years)</p>
+                        </div>
+                      </div>
+                    </div>
+            
+            <script>
+            doctors.foreach(ProveriDoktor);
+
+            function ProveriDoktor(specialtyId)
+            {
+              if($departments["id"]===$doctors["specialtyId"])
+              {
+                document.getElementById("doctorName").innerHTML += name + surname;
+              }
+            }
+            </script>
+<!-- end-foreach --> 
 
 
-                          <div class="col-lg-6 mt-4 mt-lg-0">
+<div class="col-lg-6 mt-4 mt-lg-0">
                             <div class="member d-flex align-items-start">
                               <div class="pic"><img src="assets/img/doctors/doctors-2.jpg" class="img-fluid" alt=""></div>
                               <div class="member-info">
