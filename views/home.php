@@ -112,16 +112,35 @@
         <div class="section-title">
           <h2>Departments</h2>
         </div>
-
-        <div class="row">
+        
+      <script>
+        for($i=0;$i<=5;$i++)
+        {
+          <div class="row">
           <div class="col-lg-3">
             <ul class="nav nav-tabs flex-column">
 
               <li class="nav-item">
-                <a class="nav-link active show" data-toggle="tab" href="#tab-<?php echo $departments[0]["id"]; ?>"><?php echo $departments[0]["title"]; ?></a>
+                <a class="nav-link active show" data-toggle="tab" href="#tab-<?php echo $departments[$i]["id"]; ?>"><?php echo $departments[$i]["title"]; ?></a>
               </li>
-            
-              <li class="nav-item">
+              
+        </ul>
+        </div> 
+
+        <div class="col-lg-9 mt-4 mt-lg-0">
+        <div class="tab-content">
+          <div class="tab-pane active show" id="tab-1">
+          
+            <div class="row">
+              <div class="col-lg-8 details order-2 order-lg-1">
+                <h3>
+                  Cardiology
+                </h3>
+                <p class="font-italic"><?php echo $departments[$i]["description"]; ?></p>
+
+        }
+      </script>
+           <li class="nav-item">
                 <a class="nav-link" data-toggle="tab" href="#tab-<?php echo $departments[1]["id"]; ?>"><?php echo $departments[1]["title"]; ?></a>
               </li>
               <li class="nav-item">
@@ -135,18 +154,9 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" data-toggle="tab" href="#tab-<?php echo $departments[5]["id"]; ?>"><?php echo $departments[5]["title"]; ?></a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-lg-9 mt-4 mt-lg-0">
-            <div class="tab-content">
-              <div class="tab-pane active show" id="tab-1">
-                <div class="row">
-                  <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>
-                      Cardiology
-                    </h3>
-                    <p class="font-italic"><?php echo $departments[0]["description"]; ?></p>
+              </li> 
+          
+         
 
                     <section id="doctors" class="doctors">
                       <!-- Proveruvea koi od selektiranite dokotori se od praviot departnment - gi stava vo lista -->
@@ -174,9 +184,9 @@
             function ProveriDoktor(specialtyId)
             {
               if($departments["id"]===$doctors["specialtyId"])
-              {
+              
                 document.getElementById("doctorName").innerHTML += name + surname;
-              }
+              
             }
             </script>
 <!-- end-foreach --> 
