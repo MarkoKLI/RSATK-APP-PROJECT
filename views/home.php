@@ -105,295 +105,104 @@
 
     
 
-    <!-- ======= Departments Section ======= -->
-    <section id="departments" class="departments">
+<!-- ======= Departments Section ======= -->
+<section id="departments" class="departments">
       <div class="container">
 
         <div class="section-title">
           <h2>Departments</h2>
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
         </div>
-        
-      <script>
-        for($i=0;$i<=5;$i++)
-        {
-          <div class="row">
+
+        <div class="row">
+          <!-- Department header Section -->
           <div class="col-lg-3">
             <ul class="nav nav-tabs flex-column">
-
+              <?php                 
+                foreach ($departments as $key => $department):
+              ?>
               <li class="nav-item">
-                <a class="nav-link active show" data-toggle="tab" href="#tab-<?php echo $departments[$i]["id"]; ?>"><?php echo $departments[$i]["title"]; ?></a>
+                <a class="nav-link <?php if ($key == 0) { echo "active show"; }?>" 
+                    data-toggle="tab" 
+                    href="#tab-<?php echo $department["id"]; ?>">
+                  <?php 
+                    echo $department["title"];
+                  ?>
+                </a>
               </li>
-              
-        </ul>
-        </div> 
+              <?php 
+                endforeach; 
+              ?>
+            </ul>
+          </div>
+          <!-- End of Department header Section -->
 
-        <div class="col-lg-9 mt-4 mt-lg-0">
-        <div class="tab-content">
-          <div class="tab-pane active show" id="tab-1">
-          
-            <div class="row">
-              <div class="col-lg-8 details order-2 order-lg-1">
-                <h3>
-                  Cardiology
-                </h3>
-                <p class="font-italic"><?php echo $departments[$i]["description"]; ?></p>
-
-        }
-      </script>
-           <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#tab-<?php echo $departments[1]["id"]; ?>"><?php echo $departments[1]["title"]; ?></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#tab-<?php echo $departments[2]["id"]; ?>"><?php echo $departments[2]["title"]; ?></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#tab-<?php echo $departments[3]["id"]; ?>"><?php echo $departments[3]["title"]; ?></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#tab-<?php echo $departments[4]["id"]; ?>"><?php echo $departments[4]["title"]; ?></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#tab-<?php echo $departments[5]["id"]; ?>"><?php echo $departments[5]["title"]; ?></a>
-              </li> 
-          
-         
-
-                    <section id="doctors" class="doctors">
-                      <!-- Proveruvea koi od selektiranite dokotori se od praviot departnment - gi stava vo lista -->
-                      <div class="container">
-
-
-<!-- start-foreach -->
-                
-
-                  <div class="row">
-                    <div class="col-lg-6">
-                      <div class="member d-flex align-items-start">
-                        <div class="pic"> <img src="assets/img/doctors/doctors-1.jpg" class="img-fluid" alt=""> </div>
-                        <div class="member-info">
-                          <h4 id ="doctorName"></h4>
-                          <span>SPECIALTIES <?php echo $departments[0]["title"]; ?></span>
-                          <p>YEAR BEGAN PRACTICING: 2005 (16 years)</p>
-                        </div>
-                      </div>
-                    </div>
-            
-            <script>
-            doctors.foreach(ProveriDoktor);
-
-            function ProveriDoktor(specialtyId)
-            {
-              if($departments["id"]===$doctors["specialtyId"])
-              
-                document.getElementById("doctorName").innerHTML += name + surname;
-              
-            }
-            </script>
-<!-- end-foreach --> 
-
-
-<div class="col-lg-6 mt-4 mt-lg-0">
-                            <div class="member d-flex align-items-start">
-                              <div class="pic"><img src="assets/img/doctors/doctors-2.jpg" class="img-fluid" alt=""></div>
-                              <div class="member-info">
-                                <h4>John Caplan</h4>
-                                <span>SPECIALTIES Cardiovascular Disease Clinical Cardiac Electrophysiology</span>
-                                <p>YEAR BEGAN PRACTICING: 1996 (25 years)</p>
-                              </div>
-                            </div>
+          <!-- Department Body Section -->        
+          <div class="col-lg-9 mt-4 mt-lg-0">
+            <div class="tab-content">
+              <?php                 
+                foreach ($departments as $key => $department):
+              ?>
+              <div class="tab-pane <?php if ($key == 0) { echo "active show"; }?>" 
+                    id="tab-<?php echo $department["id"]; ?>">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>
+                      <?php 
+                        echo $department["title"];
+                      ?>
+                    </h3>
+                    <p class="font-italic">
+                      <?php 
+                        echo $department["description"];
+                      ?>
+                    </p>
+                    <!-- Doctor-in-Department section -->  
+                    <div class="row">
+                      <?php 
+                        foreach ($doctors as $doctor):
+                          if ($doctor["specialtyId"] == $department["id"]):
+                      ?>
+                      <!-- tuka dosredete si kako sakate da bidat pretstaveni doktorite -->
+                      <!-- nemam staveno description pole za doktori, taka da terajte samo so slika, ime, 
+                            prezime, telefon, email i kopce za zakazuvanje pregled kaj niv -->
+                      <div class="col-lg-6">
+                        <div class="member d-flex align-items-start">
+                          <div class="pic"><img src="assets/img/doctors/doctors-1.jpg" class="img-fluid" alt=""></div>
+                          <div class="member-info">
+                            <h4>
+                              <?php 
+                                echo $doctor["name"] . ' ' . $doctor["surname"];
+                              ?>
+                            </h4>
+                            <span>
+                              <?php 
+                                echo $department["title"];
+                              ?>
+                            </span>
+                            <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
                           </div>
                         </div>
                       </div>
-
-                    </section>
-
-                  </div>
-                  <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="assets/img/departments-1.jpg" alt="" class="img-fluid">
+                      <?php 
+                          endif;
+                        endforeach;
+                      ?>
+                    </div>
+                    <!-- End of Doctor-in-Department section -->
                   </div>
                 </div>
               </div>
-              <div class="tab-pane" id="tab-2">
-                <div class="row">
-                  <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Neurology</h3>
-                    <p class="font-italic">Neurology is the branch of medicine concerned with the study and treatment of disorders of the nervous system.</p>
-                    <p>Our health and safety of our patients, families and staff is our top priority. We are taking a comprehensive approach to prevent the spread of infectious disease. The Hospital and the Department of Neurology has implemented new measures to provide the safest possible environment.</p>
-                    <section id="doctors" class="doctors">
-      <div class="container">
-
-      
-        <div class="row">
-
-          <div class="col-lg-6">
-            <div class="member d-flex align-items-start">
-              <div class="pic"><img src="assets/img/doctors/doctors-1.jpg" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Rajesh C. Sachdeo</h4>
-                <span>SPECIALTIES Neurology</span>
-                <p>YEAR BEGAN PRACTICING: 1980 (41 years)</p>
-              </div>
+              <?php 
+                endforeach; 
+              ?>
             </div>
           </div>
-
-          <div class="col-lg-6 mt-4 mt-lg-0">
-            <div class="member d-flex align-items-start">
-              <div class="pic"><img src="assets/img/doctors/doctors-2.jpg" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Paul K. Kaiser</h4>
-                <span>SPECIALTIESClinical Neurophysiology, Neurology, Vascular Neurology </span>
-                <p>YEAR BEGAN PRACTICING: 1993 (28 years)</p>
-              </div>
-            </div>
-          </div>
-
-
+          <!-- End of Department Body Section -->
         </div>
-
       </div>
-    </section>  
-                </div>
-                  <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="assets/img/departments-2.jpg" alt="" class="img-fluid">
-                  </div>
-                </div>
-              </div>
-              <div class="tab-pane" id="tab-3">
-                <div class="row">
-                  <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Hepatology</h3>
-                    <p class="font-italic">Hepatology is a branch of medicine concerned with the study, prevention, diagnosis and management of diseases that affect the liver, gallbladder, biliary tree and pancreas.</p>
-                    <p>Hepatologists offer treatment and evaluation for patients presenting with different liver diseases. There are specialty clinics for the management of hepatitis C, hepatitis B, fatty liver, liver cancer, cirrhosis and liver transplant. The UF liver team is multidisciplinary, with colleagues in surgery, oncology, radiology and other internal medicine specialties working together to provide patients with personalized care. The team performs leading-edge scientific research to improve prevention, detection, treatment, and outcomes of patients with liver disease and its complications.</p>
-                    <section id="doctors" class="doctors">
-      <div class="container">
-
-      
-        <div class="row">
-
-          <div class="col-lg-6">
-            <div class="member d-flex align-items-start">
-              <div class="pic"><img src="assets/img/doctors/doctors-1.jpg" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Jane Aldrige</h4>
-                <span>Hepatologist</span>
-                <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6 mt-4 mt-lg-0">
-            <div class="member d-flex align-items-start">
-              <div class="pic"><img src="assets/img/doctors/doctors-2.jpg" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Harry Morrison</h4>
-                <span>Pediatrician</span>
-                <p>Aut maiores voluptates amet et quis praesentium qui senda para</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section> 
-                </div>
-                  <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="assets/img/departments-3.jpg" alt="" class="img-fluid">
-                  </div>
-                </div>
-              </div>
-              <div class="tab-pane" id="tab-4">
-                <div class="row">
-                  <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Pediatrics</h3>
-                    <p class="font-italic">Pediatrics is the branch of medicine that involves the medical care of infants, children, and adolescents.</p>
-                    <p>Pediatric hospitalists are pediatricians who work primarily in hospitals. They care for children in many hospital areas, including the pediatric ward, labor and delivery, the newborn nursery, the emergency department, the neonatal intensive care unit, and the pediatric intensive care unit. </p>
-                    <section id="doctors" class="doctors">
-      <div class="container">
-
-      
-        <div class="row">
-
-          <div class="col-lg-6">
-            <div class="member d-flex align-items-start">
-              <div class="pic"><img src="assets/img/doctors/doctors-1.jpg" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Joe Jonas</h4>
-                <span>Pediatrics surgeon</span>
-                <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6 mt-4 mt-lg-0">
-            <div class="member d-flex align-items-start">
-              <div class="pic"><img src="assets/img/doctors/doctors-2.jpg" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Bart Barton</h4>
-                <span>Anesthesiologist</span>
-                <p>Aut maiores voluptates amet et quis praesentium qui senda para</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6 mt-4 mt-lg-0">
-            <div class="member d-flex align-items-start">
-              <div class="pic"><img src="assets/img/doctors/doctors-2.jpg" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Harry Morrison</h4>
-                <span>Pediatrician</span>
-                <p>Aut maiores voluptates amet et quis praesentium qui senda para</p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>  
-                </div>
-                  <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="assets/img/departments-4.jpg" alt="" class="img-fluid">
-                  </div>
-                </div>
-              </div>
-              <div class="tab-pane" id="tab-5">
-                <div class="row">
-                  <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Ophthalmology</h3>
-                    <p class="font-italic">Ophthalmology is a branch of medicine and surgery which deals with the diagnosis and treatment of eye disorders.</p>
-                    <p>The Department of Ophthalmology at Princeton Hospitals aims to set benchmarks in all aspects of ophthalmic care delivery to the patients and the public. Guidance is provided for all types of eye disorders and the services are reviewed regularly to keep them aligned with changing demands and technology.</p>
-                    <section id="doctors" class="doctors">
-      <div class="container">
-
-      
-        <div class="row">
-
-          <div class="col-lg-6 mt-4 mt-lg-0">
-            <div class="member d-flex align-items-start">
-              <div class="pic"><img src="assets/img/doctors/doctors-2.jpg" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Tory Barton</h4>
-                <span>Eye Care Specialist</span>
-                <p>Aut maiores voluptates amet et quis praesentium qui senda para</p>
-              </div>
-            </div>
-          </div>
-      
-
-        </div>
-
-      </div>
-    </section>  
-                </div>
-                  <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="assets/img/departments-5.jpg" alt="" class="img-fluid">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End Departments Section -->
+    </section>
+    <!-- End Departments Section -->
 
     
 
