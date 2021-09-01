@@ -57,6 +57,10 @@
                 $action = "show_home";
                 break;
             }
+            case "edit_user_description": {
+                require("controllers/edit-user-desctription.controller.php");       
+                break;         
+            } 
         }
         
         require_once("views/navbar.php");

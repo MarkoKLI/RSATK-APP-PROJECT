@@ -56,12 +56,27 @@
 
             $query = "  UPDATE users 
                         SET name = ?, surname = ?, email = ?, 
-                            telNr = ?, DOB = ?, address = ?, 
+                            telNr = ?, DOB = ?, address = ?
                         WHERE id = ?";
             
             $statement = self::$connection->prepare($query);
             $statement->bind_param("ssssssi", $name, $surname, $email,
                                               $phoneNr, $dob, $address, $id);
+            $statement->execute();
+            if (self::$connection->errno) {
+                return self::$connection->error;
+            }
+        }
+
+        public static function editUserDescription(int $id, string $description) {
+            self::Connect();
+
+            $query = "  UPDATE users 
+                        SET description = ?
+                        WHERE id = ?";
+            
+            $statement = self::$connection->prepare($query);
+            $statement->bind_param("si", $description, $id);
             $statement->execute();
             if (self::$connection->errno) {
                 return self::$connection->error;

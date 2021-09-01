@@ -5,8 +5,7 @@
                 <h5 class="mt-2">Login to |As yet unnamed|</h5>
             </div>
             <div class="card-body">
-                <form action="index.php" method="POST" 
-                    class="needs-validation" novalidate>
+                <form action="index.php" method="POST" class="needs-validation" novalidate>
                     <input type="hidden" name="action" value="process_login" >
                     <div class="form-group row">
                         <label class="col-3 col-form-label" for="email">Email:</label>

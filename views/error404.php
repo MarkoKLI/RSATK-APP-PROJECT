@@ -1,4 +1,4 @@
-<div class="error">
+<div class="error" style='margin-top:5%'>
                 <div class="container-floud">
                     <div class="col-xs-12 ground-color text-center">
                         <div class="container-error-404">
