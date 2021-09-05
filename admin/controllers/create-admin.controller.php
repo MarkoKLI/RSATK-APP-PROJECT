@@ -3,7 +3,7 @@
     $password = ConversionService::SecureInput($_POST["pwd"]);
     $confirmPassword = ConversionService::SecureInput($_POST["pwd-conf"]);
 
-    unset($requestFailed);
+    unset($adminRequestFailed);
     unset($passwordConfirmFailed);
     unset($usernameTaken);
 

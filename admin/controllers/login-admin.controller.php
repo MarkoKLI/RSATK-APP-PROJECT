@@ -8,7 +8,7 @@
     } else {
         $username = ConversionService::SecureInput($_POST["username"]);
         $password = ConversionService::SecureInput($_POST["pwd"]);
-        $adminDetails =  UsersAdminService::getAdminPasswordDetailsByUsername($username);
+        $adminDetails =  UsersAdminService::getAdminDetailsByUsername($username);
 
         $validLogin = Password::validatePassword($adminDetails["passwordHash"], $adminDetails["passwordSalt"], $password);
 

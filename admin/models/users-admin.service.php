@@ -86,7 +86,7 @@
             $statement->execute();
         }
 
-        public static function getAdminPasswordDetailsByUsername($username) {
+        public static function getAdminDetailsByUsername($username) {
             self::Connect();
 
             $query = "  SELECT id, passwordSalt, passwordHash

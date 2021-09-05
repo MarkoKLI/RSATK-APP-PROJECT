@@ -20,7 +20,7 @@ echo "<br>";
 echo filter_input(INPUT_SERVER,"REQUEST_URI");
 
 
-//var_dump(UsersAdminService::getAdminPasswordDetailsByUsername("admin"));
+//var_dump(UsersAdminService::getAdminDetailsByUsername("admin"));
 
 // UsersAdminService::createAdmin("admin","admin");
 

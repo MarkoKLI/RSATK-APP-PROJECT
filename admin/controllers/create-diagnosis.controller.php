@@ -8,6 +8,6 @@
         DiagnosesAdminService::createDiagnosis($name, $desc);
 
         $_SESSION["diagnoses"] = DiagnosesAdminService::getAllDiagnoses();
-        unset($title); unset($desc);
+        unset($name); unset($desc);
     }
 ?>
