@@ -166,14 +166,22 @@
                       <!-- tuka dosredete si kako sakate da bidat pretstaveni doktorite -->
                       <!-- nemam staveno description pole za doktori, taka da terajte samo so slika, ime, 
                             prezime, telefon, email i kopce za zakazuvanje pregled kaj niv -->
+                            <section id="doctors" class="doctors">
+
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Doctors</h2>
+         
+        </div>
+
+        <div class="row">
                       <div class="col-lg-6">
                         <div class="member d-flex align-items-start">
                           <div class="pic"><img src="assets/img/doctors/doctors-1.jpg" class="img-fluid" alt=""></div>
                           <div class="member-info">
                             <h4>
-                              <?php 
-                                echo $doctor["name"] . ' ' . $doctor["surname"];
-                              ?>
+                            <a href="<?php echo $location . "?action=show_profile";?>"><?php echo $doctor["name"] . ' ' . $doctor["surname"];?></a> 
                             </h4>
                             <span>
                               <?php 
@@ -181,9 +189,13 @@
                               ?>
                             </span>
                             <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
+
                           </div>
                         </div>
-                      </div>
+                          </div>
+                        </div>
+      </div>
+                            </section>
                       <?php 
                           endif;
                         endforeach;
