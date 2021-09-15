@@ -7,9 +7,9 @@
               <strong>
                 <?php 
 
-                # imas userId
+                
                     $currentUser = UsersService::getUserById($_COOKIE["userId"]);
-                    $displayedUser = UsersService::getUserById(1); # ova treba da bide dadeno so GET metod $_GET["DisplayedUserId"]
+                    $displayedUser = UsersService::getUserById(1); 
 
                     echo $displayedUser["surname"] . ', ' . $displayedUser["name"]; 
                 ?>
@@ -18,16 +18,12 @@
           </div>
           <div class="col-md-3">
             <?php 
-            ## if ($currentUser["userType"] != "DOCTOR"  && $displayedUser["userType"] == "PATIENT" ):
-            ##  header("Location: " . $location . '?action=show_login');
-            ## endif;
-
-            ## if (currentUserId == DisplayedUserId ): 
+            
             ?>
             <div class="button" style="float:right;">
               <a href="<?php echo $location . '?action=edit_user_description' ?>" class="btn btn-outline-success">Edit Profile</a>
             </div>
-            <?php ## endif; ?>
+            <?php  ?>
           </div>
         </div>
       </div>

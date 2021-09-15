@@ -163,9 +163,6 @@
                         foreach ($doctors as $doctor):
                           if ($doctor["specialtyId"] == $department["id"]):
                       ?>
-                      <!-- tuka dosredete si kako sakate da bidat pretstaveni doktorite -->
-                      <!-- nemam staveno description pole za doktori, taka da terajte samo so slika, ime, 
-                            prezime, telefon, email i kopce za zakazuvanje pregled kaj niv -->
                             <section id="doctors" class="doctors">
 
       <div class="container">
